@@ -50,15 +50,12 @@ class PermissionManager
                     'coupons/manage',
                     'coupons/delete',
                     'reports/view',
-                    'reports/export',
-                    'integrations/view',
-                    'integrations/manage',
-                    'integrations/delete'
+                    'reports/export'
                 ]
             ],
             'worker'      => [
                 'title'        => __('Worker', 'fluent-cart'),
-                'descriptions' => __('View Access for products, customers, coupons, integretions. Manage Access for Order Statuses', 'fluent-cart'),
+                'descriptions' => __('View Access for products, customers, coupons. Manage Access for Order Statuses', 'fluent-cart'),
                 'permissions'  => [
                     'products/view',
                     'customers/view',
@@ -67,13 +64,12 @@ class PermissionManager
                     'subscriptions/view',
                     'licenses/view',
                     'coupons/view',
-                    'coupons/manage',
-                    'integrations/view'
+                    'coupons/manage'
                 ]
             ],
             'accountant'  => [
                 'title'        => __('Accountant', 'fluent-cart'),
-                'descriptions' => __('View Access for products, customers, orders, subscriptions, licenses, coupons, reports and integrations', 'fluent-cart'),
+                'descriptions' => __('View Access for products, customers, orders, subscriptions, licenses, coupons, and reports', 'fluent-cart'),
                 'permissions'  => [
                     'orders/view',
                     'orders/export',
@@ -83,8 +79,7 @@ class PermissionManager
                     'customers/view',
                     'subscriptions/view',
                     'licenses/view',
-                    'coupons/view',
-                    'integrations/view'
+                    'coupons/view'
                 ]
             ]
         ];
@@ -206,9 +201,6 @@ class PermissionManager
             'coupons/delete'         => __('Delete Coupons', 'fluent-cart'),
             'reports/view'           => __('View Reports', 'fluent-cart'),
             'reports/export'         => __('Export Reports', 'fluent-cart'),
-            'integrations/view'      => __('View Integrations', 'fluent-cart'),
-            'integrations/manage'    => __('Manage Integrations', 'fluent-cart'),
-            'integrations/delete'    => __('Delete Integrations', 'fluent-cart'),
             'labels/view'            => __('View Labels', 'fluent-cart'),
             'labels/manage'          => __('Manage Labels', 'fluent-cart'),
             'labels/delete'          => __('Delete Labels', 'fluent-cart'),

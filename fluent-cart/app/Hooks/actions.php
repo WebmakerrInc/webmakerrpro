@@ -61,7 +61,6 @@ if (\FluentCart\Api\ModuleSettings::isActive('stock_management')) {
 
 \FluentCart\App\Http\Routes\WebRoutes::register();
 
-(new \FluentCart\App\Modules\IntegrationActions\GlobalIntegrationActionHandler())->register();
 (new \FluentCart\App\Hooks\Handlers\GlobalStorageHandler)->register();
 
 
@@ -142,12 +141,6 @@ $app->ready(function () use ($app) {
 // Add to your theme's functions.php or a custom plugin
 // For Elementor preview URL
 
-
-(new \FluentCart\App\Services\Integration)->register();
-
-$app->addAction('fluent_cart/integration/schedule_feed', function ($queueId) use ($app) {
-    (new \FluentCart\App\Modules\Integrations\GlobalNotificationHandler())->processIntegrationAction($queueId);
-});
 
 // Schedulers
 (new \FluentCart\App\Hooks\Scheduler\AutoSchedules\FiveMinuteScheduler())->register();

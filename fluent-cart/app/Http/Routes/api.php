@@ -13,7 +13,6 @@ use FluentCart\App\Http\Controllers\CustomerController;
 use FluentCart\App\Http\Controllers\DashboardController;
 use FluentCart\App\Http\Controllers\EmailNotificationController;
 use FluentCart\App\Http\Controllers\FileUploadController;
-use FluentCart\App\Http\Controllers\IntegrationController;
 use FluentCart\App\Http\Controllers\LabelController;
 use FluentCart\App\Http\Controllers\ModuleSettingsController;
 use FluentCart\App\Http\Controllers\NotesController;
@@ -21,7 +20,6 @@ use FluentCart\App\Http\Controllers\OnboardingController;
 use FluentCart\App\Http\Controllers\OrderController;
 use FluentCart\App\Http\Controllers\ProductController;
 use FluentCart\App\Http\Controllers\ProductDownloadablesController;
-use FluentCart\App\Http\Controllers\ProductIntegrationsController;
 use FluentCart\App\Http\Controllers\ProductVariationController;
 use FluentCart\App\Http\Controllers\StorageController;
 use FluentCart\App\Http\Controllers\SettingsController;
@@ -204,64 +202,6 @@ $router->prefix('variants')->withPolicy('ProductPolicy')->group(function (Router
         'permissions' => 'products/view'
     ]);
 });
-//Integration route declaration
-$router->prefix('integration')->withPolicy('IntegrationPolicy')->group(function (Router $router) {
-
-    $router->get('addons', [AddonsController::class, 'getAddons'])->meta([
-        'permissions' => 'integrations/view'
-    ]);
-
-    $router->get('global-settings', [IntegrationController::class, 'getGlobalSettings'])->meta([
-        'permissions' => 'integrations/view'
-    ]);
-
-    $router->post('global-settings', [IntegrationController::class, 'setGlobalSettings'])->meta([
-        'permissions' => 'integrations/manage'
-    ]);
-
-    $router->get('global-feeds', [IntegrationController::class, 'getFeeds'])->meta([
-        'permissions' => 'integrations/view'
-    ]);
-
-    $router->post('global-feeds/change-status/{integration_id}', [IntegrationController::class, 'changeStatus'])->int('integration_id')->meta([
-        'permissions' => 'integrations/manage'
-    ]);
-
-    $router->delete('global-feeds/{integration_id}', [IntegrationController::class, 'deleteSettings'])->int('integration_id')->meta([
-        'permissions' => 'integrations/delete'
-    ]);
-
-    // For product specific integration feed editor. New or existing integration
-    $router->get('global-feeds/settings', [IntegrationController::class, 'getSettings'])->meta([
-        'permissions' => 'integrations/view'
-    ]);
-
-    // For integration feed editor. For new or existing integration
-    $router->post('global-feeds/settings', [IntegrationController::class, 'saveSettings'])->meta([
-        'permissions' => 'integrations/manage'
-    ]);
-
-    $router->get('feed/lists', [IntegrationController::class, 'lists'])->meta([
-        'permissions' => 'integrations/view'
-    ]);
-
-
-    $router->get('feed/dynamic_options', [IntegrationController::class, 'getDynamicOptions'])->meta([
-        'permissions' => 'integrations/view'
-    ]);
-
-    $router->post('feed/chained', [IntegrationController::class, 'chained'])->meta([
-        'permissions' => 'integrations/manage'
-    ]);
-
-    $router->post('feed/install-plugin', [AddonsController::class, 'installAndActivate'])->meta([
-        'permissions' => 'integrations/manage'
-    ]);
-
-});
-
-//End integration route declaration
-
 $router->post('settings/payment-methods/paypal/seller-auth-token', [ConnectConfig::class, 'getSellerAuthToken'])->withPolicy('AdminPolicy')->meta([
     'permissions' => 'super_admin'
 ]);
@@ -678,27 +618,6 @@ $router->prefix('address-info')->withPolicy('CustomerPolicy')->group(function ($
 
 // Add these new routes for product-specific integration settings
 $router->prefix('products')->withPolicy('ProductPolicy')->group(function (Router $router) {
-    // New routes for product integrations
-    $router->get('/{product_id}/integrations/{integration_name}/settings', [ProductIntegrationsController::class, 'getProductIntegrationSettings'])->meta([
-        'permissions' => 'products/view'
-    ]);
-
-    $router->post('/{product_id}/integrations', [ProductIntegrationsController::class, 'saveProductIntegration'])->meta([
-        'permissions' => 'products/manage'
-    ]);
-
-    $router->delete('/{product_id}/integrations/{integration_id}', [ProductIntegrationsController::class, 'deleteProductIntegration'])->meta([
-        'permissions' => 'products/manage'
-    ]);
-
-    $router->post('/{product_id}/integrations/feed/change-status', [ProductIntegrationsController::class, 'changeStatus'])->meta([
-        'permissions' => 'products/manage'
-    ]);
-
-    $router->get('/{productId}/integrations', [ProductIntegrationsController::class, 'getFeeds'])->meta([
-        'permissions' => 'products/view'
-    ]);
-
 });
 
 
