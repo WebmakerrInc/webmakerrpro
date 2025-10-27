@@ -10,6 +10,7 @@ use FluentSupport\App\Models\TicketTag;
 use FluentSupport\App\Modules\PermissionManager;
 use FluentSupport\App\Services\Helper;
 use FluentSupport\App\Services\TransStrings;
+use FluentSupport\Framework\Database\QueryException;
 
 class Menu
 {
@@ -242,6 +243,10 @@ class Menu
 
         $assets = $app['url.assets'];
 
+        if (Helper::isPersonsTableMissing()) {
+            return;
+        }
+
         add_filter('admin_footer_text', function ($text) {
             return '<span id="footer-thankyou">We value your feedback! If the plugin is helpful, please rate Fluent Support with <a target="_blank" rel="nofollow" href="https://wordpress.org/support/plugin/fluent-support/reviews/#new-post">★★★★★</a> on WordPress.org. For assistance, check out the <a target="_blank" rel="nofollow" href="https://fluentsupport.com/docs/navigate-with-the-keyboard-shortcut">keyboard shortcuts</a> and <a target="_blank" rel="nofollow" href="https://fluentsupport.com/docs/">documentation</a>.</span>';
         });
@@ -252,9 +257,17 @@ class Menu
             'fluent_support_admin_app', $assets . 'admin/css/alpha-admin.css', [], FLUENT_SUPPORT_VERSION
         );
 
-        $agents = Agent::select(['id', 'first_name', 'last_name'])
-            ->where('person_type', 'agent')
-            ->get()->toArray();
+        try {
+            $agents = Agent::select(['id', 'first_name', 'last_name'])
+                ->where('person_type', 'agent')
+                ->get()->toArray();
+        } catch (QueryException $exception) {
+            if (Helper::isPersonsTableMissing($exception)) {
+                return;
+            }
+
+            throw $exception;
+        }
 
         foreach ($agents as $index => $agent) {
             $agents[$index]['id'] = strval($agent['id']);
@@ -273,7 +286,9 @@ class Menu
             ]);
         }
 
-        $me->permissions = PermissionManager::currentUserPermissions();
+        if ($me) {
+            $me->permissions = PermissionManager::currentUserPermissions();
+        }
 
         do_action('fluent_support_loading_app', $app);
 
