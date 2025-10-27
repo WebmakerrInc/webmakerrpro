@@ -358,7 +358,12 @@ class MenuHandler
         Vite::enqueueScript($slug . '_admin_app_start', 'admin/bootstrap/app.js', [$slug . '_global_admin_hooks']);
 
         //Don't register this script using vite.
-        wp_enqueue_script($slug . '_global_admin_hooks', Vite::getEnqueuePath('admin/admin_hooks.js'));
+        wp_enqueue_script(
+            $slug . '_global_admin_hooks',
+            Vite::getEnqueuePath('admin/admin_hooks.js'),
+            ['wp-hooks'],
+            FLUENTCART_VERSION
+        );
 
         $manager = GatewayManager::getInstance();
         $payment_routes = $manager->getRoutes();
