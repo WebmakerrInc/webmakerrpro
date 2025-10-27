@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){const t=document.querySelector("[data-fct-menu-toggle]"),n=t.parentNode,e=n.querySelector("[data-fc-offcanvas-menu]"),o=n.querySelector("[data-fc-offcanvas-menu-close]");t.addEventListener("click",()=>{e&&e.classList.toggle("open")}),o.addEventListener("click",()=>{e&&e.classList.remove("open")})});
