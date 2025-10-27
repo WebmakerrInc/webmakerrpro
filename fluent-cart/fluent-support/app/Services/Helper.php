@@ -14,6 +14,7 @@ use FluentSupport\App\Models\Person;
 use FluentSupport\App\Models\Product;
 use FluentSupport\App\Services\Includes\UploadService;
 use FluentSupport\App\Services\EmailNotification\Settings;
+use FluentSupport\Framework\Database\QueryException;
 use FluentSupport\Framework\Support\Arr;
 
 /**
@@ -27,6 +28,8 @@ use FluentSupport\Framework\Support\Arr;
  */
 class Helper
 {
+    protected static $metaTableMissing = false;
+
     public static function FluentSupport($module = null)
     {
         return App::getInstance($module);
@@ -237,10 +240,22 @@ class Helper
      */
     public static function getOption($key, $default = '')
     {
+        if (static::isMetaTableMissing()) {
+            return $default;
+        }
+
         //Get settings from meta table using the key
-        $data = Meta::where('object_type', 'option')
-            ->where('key', $key)
-            ->first();
+        try {
+            $data = Meta::where('object_type', 'option')
+                ->where('key', $key)
+                ->first();
+        } catch (QueryException $exception) {
+            if (static::isMetaTableMissing($exception)) {
+                return $default;
+            }
+
+            throw $exception;
+        }
 
         if ($data) {
             $value = static::safeUnserialize($data->value);
@@ -261,32 +276,72 @@ class Helper
      */
     public static function updateOption($key, $value)
     {
+        if (static::isMetaTableMissing()) {
+            return false;
+        }
+
         //Get settings from meta table using the key
-        $data = Meta::where('object_type', 'option')
-            ->where('key', $key)
-            ->first();
+        try {
+            $data = Meta::where('object_type', 'option')
+                ->where('key', $key)
+                ->first();
+        } catch (QueryException $exception) {
+            if (static::isMetaTableMissing($exception)) {
+                return false;
+            }
+
+            throw $exception;
+        }
 
         //If data is available, update existing data and return
         if ($data) {
-            return Meta::where('id', $data->id)
-                ->update([
-                    'value' => maybe_serialize($value)
-                ]);
+            try {
+                return Meta::where('id', $data->id)
+                    ->update([
+                        'value' => maybe_serialize($value)
+                    ]);
+            } catch (QueryException $exception) {
+                if (static::isMetaTableMissing($exception)) {
+                    return false;
+                }
+
+                throw $exception;
+            }
         }
 
         //If newly submit, create new record and return
-        return Meta::insert([
-            'object_type' => 'option',
-            'key'         => $key,
-            'value'       => maybe_serialize($value)
-        ]);
+        try {
+            return Meta::insert([
+                'object_type' => 'option',
+                'key'         => $key,
+                'value'       => maybe_serialize($value)
+            ]);
+        } catch (QueryException $exception) {
+            if (static::isMetaTableMissing($exception)) {
+                return false;
+            }
+
+            throw $exception;
+        }
     }
 
     public static function deleteOption($key)
     {
-        return Meta::where('object_type', 'option')
-            ->where('key', $key)
-            ->delete();
+        if (static::isMetaTableMissing()) {
+            return false;
+        }
+
+        try {
+            return Meta::where('object_type', 'option')
+                ->where('key', $key)
+                ->delete();
+        } catch (QueryException $exception) {
+            if (static::isMetaTableMissing($exception)) {
+                return false;
+            }
+
+            throw $exception;
+        }
     }
 
     /**
@@ -297,9 +352,21 @@ class Helper
      */
     public static function getIntegrationOption($key, $default = '')
     {
-        $data = Meta::where('object_type', 'integration_settings')
-            ->where('key', $key)
-            ->first();
+        if (static::isMetaTableMissing()) {
+            return $default;
+        }
+
+        try {
+            $data = Meta::where('object_type', 'integration_settings')
+                ->where('key', $key)
+                ->first();
+        } catch (QueryException $exception) {
+            if (static::isMetaTableMissing($exception)) {
+                return $default;
+            }
+
+            throw $exception;
+        }
 
         if ($data) {
             $value = static::safeUnserialize($data->value);
@@ -319,22 +386,76 @@ class Helper
      */
     public static function updateIntegrationOption($key, $value)
     {
-        $data = Meta::where('object_type', 'integration_settings')
-            ->where('key', $key)
-            ->first();
-
-        if ($data) {
-            return Meta::where('id', $data->id)
-                ->update([
-                    'value' => maybe_serialize($value)
-                ]);
+        if (static::isMetaTableMissing()) {
+            return false;
         }
 
-        return Meta::insert([
-            'object_type' => 'integration_settings',
-            'key'         => $key,
-            'value'       => maybe_serialize($value)
-        ]);
+        try {
+            $data = Meta::where('object_type', 'integration_settings')
+                ->where('key', $key)
+                ->first();
+        } catch (QueryException $exception) {
+            if (static::isMetaTableMissing($exception)) {
+                return false;
+            }
+
+            throw $exception;
+        }
+
+        if ($data) {
+            try {
+                return Meta::where('id', $data->id)
+                    ->update([
+                        'value' => maybe_serialize($value)
+                    ]);
+            } catch (QueryException $exception) {
+                if (static::isMetaTableMissing($exception)) {
+                    return false;
+                }
+
+                throw $exception;
+            }
+        }
+
+        try {
+            return Meta::insert([
+                'object_type' => 'integration_settings',
+                'key'         => $key,
+                'value'       => maybe_serialize($value)
+            ]);
+        } catch (QueryException $exception) {
+            if (static::isMetaTableMissing($exception)) {
+                return false;
+            }
+
+            throw $exception;
+        }
+    }
+
+    protected static function isMetaTableMissing(?QueryException $exception = null)
+    {
+        if ($exception && strpos($exception->getMessage(), 'fs_meta') !== false) {
+            static::$metaTableMissing = true;
+        }
+
+        if (static::$metaTableMissing) {
+            return true;
+        }
+
+        global $wpdb;
+
+        if (!isset($wpdb)) {
+            return false;
+        }
+
+        $table = $wpdb->prefix . 'fs_meta';
+        $tableName = $wpdb->get_var($wpdb->prepare('SHOW TABLES LIKE %s', $table));
+
+        if ($tableName !== $table) {
+            static::$metaTableMissing = true;
+        }
+
+        return static::$metaTableMissing;
     }
 
     public static function getTicketViewUrl($ticket)
