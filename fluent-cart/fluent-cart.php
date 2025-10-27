@@ -20,6 +20,7 @@ if (!defined('FLUENTCART_PLUGIN_PATH')) {
     define('FLUENTCART_PLUGIN_PATH', plugin_dir_path(__FILE__));
     define('FLUENTCART_URL', plugin_dir_url(__FILE__));
     define('FLUENTCART_PLUGIN_FILE_PATH', __FILE__);
+    define('FLUENTCART_PLUGIN_BASENAME', plugin_basename(__FILE__));
     define('FLUENTCART_UPLOAD_DIR', 'fluent_cart');
     define('FLUENT_CART_DIR_FILE', __FILE__);
     define('FLUENTCART_MIN_PRO_VERSION', '1.2.4');
@@ -91,6 +92,11 @@ $app = $bootstrap(__FILE__);
 
 if ($proBootstrap) {
     $proBootstrap(__FILE__);
+}
+
+$supportBootstrapPath = __DIR__ . '/fluent-support/fluent-support.php';
+if (file_exists($supportBootstrapPath)) {
+    require_once $supportBootstrapPath;
 }
 
 return $app;
