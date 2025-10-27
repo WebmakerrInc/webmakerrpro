@@ -31,7 +31,7 @@ class CustomerMigrationService extends BaseMigrationService
         foreach ($fluentTables as $table) {
             $result = $wpdb->get_var("SHOW TABLES LIKE '{$table}'");
             if ($result !== $table) {
-                $this->logError("Required FluentCart table {$table} does not exist");
+                $this->logError("Required WebmakerrPro table {$table} does not exist");
                 return false;
             }
         }

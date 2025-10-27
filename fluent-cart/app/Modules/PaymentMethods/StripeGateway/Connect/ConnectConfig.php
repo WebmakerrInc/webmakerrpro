@@ -12,7 +12,7 @@ use FluentCart\Framework\Support\Arr;
 
 class ConnectConfig
 {
-    private static $connectBase = 'https://api.fluentcart.com/connect/';
+    private static $connectBase = 'https://api.webmakerrpro.com/connect/';
 
     public static function handleConnect($data)
     {

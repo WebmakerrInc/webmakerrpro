@@ -18,7 +18,7 @@ class DynamicData
                 $tags[] = [
                     'name'  => '{' . $name . '}',
                     'label' => $label,
-                    'group' => 'Product - FluentCart',
+                    'group' => 'Product - WebmakerrPro',
                 ];
             }
             return $tags;

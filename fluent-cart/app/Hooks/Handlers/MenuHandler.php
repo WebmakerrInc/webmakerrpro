@@ -171,7 +171,7 @@ class MenuHandler
 
         global $submenu;
 
-        $adminMenuTitle = apply_filters('fluent_cart/admin_menu_title', 'FluentCart', []);
+        $adminMenuTitle = apply_filters('fluent_cart/admin_menu_title', 'WebmakerrPro', []);
 
         add_menu_page(
             $adminMenuTitle,
@@ -444,7 +444,7 @@ class MenuHandler
             'country_tax_titles'               => TaxModule::taxTitleLists(),
             'site_url'                         => site_url(),
             'modules_settings'                 => ModuleSettings::getAllSettings(),
-            'purchase_fluent_cart_link'        => 'https://fluentcart.com/',
+            'purchase_fluent_cart_link'        => 'https://webmakerrpro.com/',
             'admin_notices'                    => apply_filters('fluent_cart/admin_notices', []),
         ]);
 

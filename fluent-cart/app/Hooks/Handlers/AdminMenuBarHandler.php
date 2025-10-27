@@ -47,7 +47,7 @@ class AdminMenuBarHandler
             'href'  => false, // disables direct link to act as dropdown
             'meta'  => [
                 'class' => $id,
-                'title' => __('FluentCart', 'fluent-cart')
+                'title' => __('WebmakerrPro', 'fluent-cart')
             ]
         ]);
 

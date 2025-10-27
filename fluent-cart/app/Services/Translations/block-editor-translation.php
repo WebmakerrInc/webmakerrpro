@@ -93,7 +93,7 @@ return [
     'Find products to make a pricing table' => __('Find products to make a pricing table', 'fluent-cart'),
     'Fluent Booking – The Ultimate Appointments Scheduling, Events Booking, Events Calendar Solution' => __('Fluent Booking – The Ultimate Appointments Scheduling, Events Booking, Events Calendar Solution', 'fluent-cart'),
     'Fluent Forms Pro Add-On: The Fastest & Most Powerful WordPress Form Plugin' => __('Fluent Forms Pro Add-On: The Fastest & Most Powerful WordPress Form Plugin', 'fluent-cart'),
-    'FluentCRM – The Ultimate CRM, Marketing, & Automation Solution for WordPress' => __('FluentCRM – The Ultimate CRM, Marketing, & Automation Solution for WordPress', 'fluent-cart'),
+    'WebmakerrPro – The Ultimate CRM, Marketing, & Automation Solution for WordPress' => __('WebmakerrPro – The Ultimate CRM, Marketing, & Automation Solution for WordPress', 'fluent-cart'),
     'Full Address' => __('Full Address', 'fluent-cart'),
     'Full Name' => __('Full Name', 'fluent-cart'),
     'Full Width' => __('Full Width', 'fluent-cart'),

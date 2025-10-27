@@ -601,7 +601,7 @@ class OrderMigrationService extends BaseMigrationService implements MigrationSer
     }
 
     /**
-     * Get or create coupon in FluentCart
+     * Get or create coupon in WebmakerrPro
      */
     private function getOrCreateCoupon(string $couponCode, int $discountAmount): int
     {
@@ -725,7 +725,7 @@ class OrderMigrationService extends BaseMigrationService implements MigrationSer
     public function getCleanupInstructions(): array
     {
         return [
-            'description' => 'Remove migrated FluentCart orders and related data',
+            'description' => 'Remove migrated WebmakerrPro orders and related data',
             'operations' => [
                 'Delete from wp_fct_orders WHERE invoice_no LIKE "WC-%"',
                 'Delete from wp_fct_order_items WHERE order_id IN (migrated orders)',
@@ -734,7 +734,7 @@ class OrderMigrationService extends BaseMigrationService implements MigrationSer
                 'Delete from wp_fct_order_meta WHERE order_id IN (migrated orders)',
                 'Delete auto-created coupons with notes containing "Auto-created during WooCommerce migration"',
             ],
-            'warning' => 'This will permanently remove all migrated order data from FluentCart'
+            'warning' => 'This will permanently remove all migrated order data from WebmakerrPro'
         ];
     }
 

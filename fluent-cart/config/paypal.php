@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'connect_api' => 'https://api.fluentcart.com/wp-json/paypal-partner-fluentcart/v2/authenticate?',
+    'connect_api' => 'https://api.webmakerrpro.com/wp-json/paypal-partner-webmakerrpro/v2/authenticate?',
 ];

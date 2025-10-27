@@ -18,11 +18,11 @@
     </ul>
     <div class="fc-logo-wrap">
         <a
-                aria-label="<?php __('FluentCart Logo', 'fluent-cart'); ?>"
-                title="<?php __('FluentCart Logo', 'fluent-cart'); ?>"
+                aria-label="<?php __('WebmakerrPro Logo', 'fluent-cart'); ?>"
+                title="<?php __('WebmakerrPro Logo', 'fluent-cart'); ?>"
                 href="<?php echo esc_url(admin_url('admin.php?page=fluent-cart#/')); ?>">
             <img src="<?php echo $logo; ?>"
-                 alt="<?php __('FluentCart Logo', 'fluent-cart'); ?>"/>
+                 alt="<?php __('WebmakerrPro Logo', 'fluent-cart'); ?>"/>
         </a>
     </div>
 </div>

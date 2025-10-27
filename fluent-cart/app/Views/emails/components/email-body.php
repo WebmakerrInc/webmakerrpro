@@ -9,7 +9,7 @@
 <!--                    <div style="color: #555555; font-size: 14px;">-->
 <!--                        {{settings.store_address}}, {{settings.store_address2}}, {{settings.store_state}}<br />-->
 <!--                        {{settings.store_city}}, {{settings.store_postcode}}, {{settings.store_country}}<br />-->
-<!--                        https://wpmanageninja.com-->
+<!--                        https://webmakerrpro.com-->
 <!--                    </div>-->
 <!--                </td>-->
 <!--                <td style="vertical-align: top; width: 50%; text-align: right; border: 0; padding: 16px;">-->

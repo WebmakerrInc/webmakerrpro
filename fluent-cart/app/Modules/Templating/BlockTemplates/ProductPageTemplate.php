@@ -45,7 +45,7 @@ class ProductPageTemplate
      */
     public function getDescription()
     {
-        return __('Displays Single FluentCart Product.', 'fluent-cart');
+        return __('Displays Single WebmakerrPro Product.', 'fluent-cart');
     }
 
 

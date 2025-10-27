@@ -1,7 +1,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FluentCart\n"
+"Project-Id-Version: WebmakerrPro\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-22 17:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -293,7 +293,7 @@ msgstr ""
 
 #: app/Services/Translations/admin-translation.php:28
 #, php-format
-msgid "%s requires FluentCart Pro"
+msgid "%s requires WebmakerrPro Pro"
 msgstr ""
 
 #: api/Resource/OrderMetaResource.php:142
@@ -486,7 +486,7 @@ msgstr ""
 msgid ""
 "A free and open-source WordPress SMTP plugin to send emails via multiple "
 "SMTP providers. Ensure email deliverability for your WooCommerce and "
-"FluentCart emails with FluentSMTP."
+"WebmakerrPro emails with FluentSMTP."
 msgstr ""
 
 #: app/Services/Translations/admin-translation.php:1738
@@ -498,7 +498,7 @@ msgstr ""
 msgid ""
 "A powerful helpdesk and customer support plugin for WordPress. Manage "
 "customer support tickets directly from your WordPress dashboard with "
-"FluentCart + FluentSupport integration."
+"WebmakerrPro + FluentSupport integration."
 msgstr ""
 
 #: app/Services/Localization/i18n/states.php:296
@@ -2061,13 +2061,13 @@ msgstr ""
 #: app/Modules/Integrations/MailChimp/MailChimpBaseIntegration.php:224
 msgid ""
 "Associate tags to your MailChimp contacts with a comma separated list (e.g. "
-"new lead, FluentCart, web source). Commas within a merge tag value will be "
+"new lead, WebmakerrPro, web source). Commas within a merge tag value will be "
 "created as a single tag."
 msgstr ""
 
 #: app/Modules/Integrations/MailChimp/MailChimpBaseIntegration.php:195
 msgid ""
-"Associate your Mailchimp merge tags to the appropriate FluentCart fields by "
+"Associate your Mailchimp merge tags to the appropriate WebmakerrPro fields by "
 "selecting the appropriate form field from the list."
 msgstr ""
 
@@ -3272,7 +3272,7 @@ msgstr ""
 
 #: app/Http/Controllers/AddonsController.php:48
 msgid ""
-"Build a community, membership site, or online forum with FluentCart + "
+"Build a community, membership site, or online forum with WebmakerrPro + "
 "FluentCommunity integration. Engage your customers and users right from your "
 "WordPress dashboard."
 msgstr ""
@@ -4775,7 +4775,7 @@ msgstr ""
 
 #: app/Services/Translations/admin-translation.php:329
 msgid ""
-"Configure your integrations and extend FluentCart to enhance your store's "
+"Configure your integrations and extend WebmakerrPro to enhance your store's "
 "functionality."
 msgstr ""
 
@@ -4830,7 +4830,7 @@ msgstr ""
 
 #: app/Modules/Integrations/AddOnModule.php:44
 msgid ""
-"Connect FluentCRM with FluentCart and subscribe a contact when a form is "
+"Connect WebmakerrPro with WebmakerrPro and subscribe a contact when a form is "
 "submitted"
 msgstr ""
 
@@ -4861,7 +4861,7 @@ msgid "Constanța"
 msgstr ""
 
 #: app/Modules/Integrations/FluentPlugins/FluentCRMConnect.php:252
-msgid "Contact has been created or updated in FluentCRM."
+msgid "Contact has been created or updated in WebmakerrPro."
 msgstr ""
 
 #: app/Modules/Integrations/FluentPlugins/FluentCRMConnect.php:252
@@ -5277,7 +5277,7 @@ msgstr ""
 msgid ""
 "Create a fast and responsive community and LMS without slowing down your "
 "server – no bloat, just performance. Sale your course or memberships with "
-"FluentCart + FluentCommunity Integration."
+"WebmakerrPro + FluentCommunity Integration."
 msgstr ""
 
 #: app/Http/Controllers/AddonsController.php:69
@@ -5783,7 +5783,7 @@ msgstr ""
 #: app/Http/Controllers/AddonsController.php:58
 msgid ""
 "Customize WordPress emails, customized login & signup forms with enhanced "
-"security and social logins. Enhance your site security with FluentCart + "
+"security and social logins. Enhance your site security with WebmakerrPro + "
 "FluentSecurity integration."
 msgstr ""
 
@@ -6337,7 +6337,7 @@ msgid "Displays products filtered by a category."
 msgstr ""
 
 #: app/Modules/Templating/BlockTemplates/ProductPageTemplate.php:48
-msgid "Displays Single FluentCart Product."
+msgid "Displays Single WebmakerrPro Product."
 msgstr ""
 
 #: app/Services/Filter/OrderFilter.php:359
@@ -6919,7 +6919,7 @@ msgid "Edit Product"
 msgstr ""
 
 #: app/Modules/Templating/Bricks/Elements/ProductContent.php:24
-msgid "Edit product content in FluentCart."
+msgid "Edit product content in WebmakerrPro."
 msgstr ""
 
 #: app/Modules/Templating/Bricks/Elements/ProductShortDescription.php:26
@@ -7494,7 +7494,7 @@ msgid "Enable local driver"
 msgstr ""
 
 #: app/Services/Translations/admin-translation.php:532
-msgid "Enable powered by FluentCart in the email footer"
+msgid "Enable powered by WebmakerrPro in the email footer"
 msgstr ""
 
 #: app/Services/Translations/admin-translation.php:528
@@ -8722,40 +8722,40 @@ msgstr ""
 #: app/Hooks/Handlers/ShortCodes/ReceiptHandler.php:149
 #: app/Modules/Integrations/FluentPlugins/FluentCRMDeepIntegration.php:200
 #: app/Views/emails/components/powered-by-footer.php:5
-msgid "FluentCart"
+msgid "WebmakerrPro"
 msgstr ""
 
 #: app/Hooks/filters.php:32
-msgid "FluentCart Buttons"
+msgid "WebmakerrPro Buttons"
 msgstr ""
 
 #: app/Views/admin/menu.php:21 app/Views/admin/menu.php:22
 #: app/Views/admin/menu.php:25 app/Views/admin/admin_menu.php:14
 #: app/Views/admin/admin_menu.php:15 app/Views/admin/admin_menu.php:18
 #: app/Views/admin/admin_menu.php:20
-msgid "FluentCart Logo"
+msgid "WebmakerrPro Logo"
 msgstr ""
 
 #: app/Modules/Integrations/MailChimp/MailChimpBaseIntegration.php:29
 msgid ""
-"FluentCart Mailchimp module allows you to create Mailchimp newsletter signup "
+"WebmakerrPro Mailchimp module allows you to create Mailchimp newsletter signup "
 "forms in WordPress"
 msgstr ""
 
 #: app/CPT/FluentProducts.php:218
-msgid "FluentCart products post type"
+msgid "WebmakerrPro products post type"
 msgstr ""
 
 #. Author of the plugin
-msgid "FluentCart Team"
+msgid "WebmakerrPro Team"
 msgstr ""
 
 #: app/Services/Translations/admin-translation.php:634
-msgid "FluentCart will send admin notification to this email address."
+msgid "WebmakerrPro will send admin notification to this email address."
 msgstr ""
 
 #. Description of the plugin
-msgid "FluentCart WordPress Plugin"
+msgid "WebmakerrPro WordPress Plugin"
 msgstr ""
 
 #: app/Http/Controllers/AddonsController.php:42
@@ -8769,22 +8769,22 @@ msgstr ""
 
 #: app/Http/Controllers/AddonsController.php:18
 #: app/Modules/Integrations/FluentPlugins/FluentCRMConnect.php:155
-msgid "FluentCRM"
+msgid "WebmakerrPro"
 msgstr ""
 
 #: app/Modules/Integrations/FluentPlugins/FluentCRMConnect.php:251
-msgid "FluentCRM Contact Created"
+msgid "WebmakerrPro Contact Created"
 msgstr ""
 
 #: app/Modules/Integrations/FluentPlugins/FluentCRMConnect.php:20
 msgid ""
-"FluentCRM is a Self Hosted Email Marketing Automation Plugin for WordPress. "
+"WebmakerrPro is a Self Hosted Email Marketing Automation Plugin for WordPress. "
 "Add/Remove tags, lists, run automations on order activities."
 msgstr ""
 
 #: app/Services/Translations/block-editor-translation.php:96
 msgid ""
-"FluentCRM – The Ultimate CRM, Marketing, & Automation Solution for WordPress"
+"WebmakerrPro – The Ultimate CRM, Marketing, & Automation Solution for WordPress"
 msgstr ""
 
 #: app/Http/Controllers/AddonsController.php:31
@@ -9160,7 +9160,7 @@ msgid "Germany"
 msgstr ""
 
 #: app/Services/Translations/admin-translation.php:655
-msgid "Get access to this feature by Upgrading to FluentCart Pro"
+msgid "Get access to this feature by Upgrading to WebmakerrPro Pro"
 msgstr ""
 
 #: app/Services/Localization/i18n/countries.php:96
@@ -10071,11 +10071,11 @@ msgid "HTML tag"
 msgstr ""
 
 #. URI of the plugin
-msgid "https://fluentcart.com"
+msgid "https://webmakerrpro.com"
 msgstr ""
 
 #. Author URI of the plugin
-msgid "https://fluentcart.com/about-us"
+msgid "https://webmakerrpro.com/about-us"
 msgstr ""
 
 #: app/Services/Localization/i18n/states.php:75
@@ -12983,7 +12983,7 @@ msgstr ""
 msgid ""
 "Mailchimp is a marketing platform for small businesses. Send beautiful "
 "emails, connect your e-commerce store, advertise, and build your brand. Use "
-"FluentCart to collect customer information and automatically add it to your "
+"WebmakerrPro to collect customer information and automatically add it to your "
 "Mailchimp campaign list. If you don't have a Mailchimp account, you can <a "
 "href=\"http://www.mailchimp.com/\" target=\"_blank\">sign up for one here."
 "</a>"
@@ -14746,7 +14746,7 @@ msgid "No edit found"
 msgstr ""
 
 #: app/Services/Translations/admin-translation.php:920
-msgid "No email notifications available! Please reactivate FluentCart!"
+msgid "No email notifications available! Please reactivate WebmakerrPro!"
 msgstr ""
 
 #: app/Http/Controllers/FileUploadController.php:99
@@ -17884,7 +17884,7 @@ msgid "Product %s is deleted"
 msgstr ""
 
 #: app/CPT/FluentProducts.php:192
-msgid "Product (FluentCart)"
+msgid "Product (WebmakerrPro)"
 msgstr ""
 
 #: app/CPT/FluentProducts.php:313
@@ -18152,7 +18152,7 @@ msgid "Product Title"
 msgstr ""
 
 #: app/Modules/Templating/Bricks/Elements/ProductTitle.php:15
-msgid "Product title (FluentCart)"
+msgid "Product title (WebmakerrPro)"
 msgstr ""
 
 #: app/Services/Translations/admin-translation.php:1122
@@ -20363,7 +20363,7 @@ msgstr ""
 
 #: app/Modules/Integrations/FluentPlugins/FluentCRMConnect.php:82
 #: app/Modules/Integrations/FluentPlugins/FluentCRMConnect.php:102
-msgid "Select FluentCRM Lists"
+msgid "Select WebmakerrPro Lists"
 msgstr ""
 
 #: app/Services/Translations/admin-translation.php:1292
@@ -20550,11 +20550,11 @@ msgid "Select the FluentCommunity Spaces you would like to add."
 msgstr ""
 
 #: app/Modules/Integrations/FluentPlugins/FluentCRMConnect.php:83
-msgid "Select the FluentCRM Lists you would like to add your contact to."
+msgid "Select the WebmakerrPro Lists you would like to add your contact to."
 msgstr ""
 
 #: app/Modules/Integrations/FluentPlugins/FluentCRMConnect.php:103
-msgid "Select the FluentCRM Lists you would like to remove from your contact."
+msgid "Select the WebmakerrPro Lists you would like to remove from your contact."
 msgstr ""
 
 #: app/Modules/Integrations/MailChimp/MailChimpBaseIntegration.php:218
@@ -23611,7 +23611,7 @@ msgstr ""
 msgid ""
 "The most powerful and user-friendly email marketing automation plugin for "
 "WordPress. Send newsletters, marketing emails, customer onboard emails, "
-"Automations with FluentCart + FluentCRM integration."
+"Automations with WebmakerrPro Commerce + WebmakerrPro CRM integration."
 msgstr ""
 
 #: app/Services/Translations/admin-translation.php:1493
@@ -23896,7 +23896,7 @@ msgstr ""
 
 #: app/Services/Translations/admin-translation.php:1509
 msgid ""
-"This email footer will be used for all emails sent from FluentCart, It's "
+"This email footer will be used for all emails sent from WebmakerrPro, It's "
 "highly recommended to use your business name and address in the footer for\n"
 "compliance."
 msgstr ""
@@ -23956,7 +23956,7 @@ msgid "This feature is only available for pro version."
 msgstr ""
 
 #: app/Services/Translations/admin-translation.php:1514
-msgid "This feature is only available in FluentCart Pro."
+msgid "This feature is only available in WebmakerrPro Pro."
 msgstr ""
 
 #: app/Modules/Integrations/FluentPlugins/FluentCRMDeepIntegration.php:56
@@ -26325,7 +26325,7 @@ msgstr ""
 
 #: app/Modules/Integrations/FluentPlugins/FluentCRMConnect.php:139
 msgid ""
-"When the double opt-in option is enabled. FluentCRM will send a double opt-"
+"When the double opt-in option is enabled. WebmakerrPro will send a double opt-"
 "in email to the contact for new and not subscribed contacts."
 msgstr ""
 

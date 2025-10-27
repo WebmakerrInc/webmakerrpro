@@ -70,7 +70,7 @@
                     <table style="width: 100%; border: none !important;margin-top: 20px;">
                         <tr style="width: 100%;">
                             <td style="text-align: right;padding-right: 4px;">
-                                <a href="https://fluentcart.com" style="padding: 10px 20px;display:inline-block;text-decoration: none;border-radius: 8px;font-weight: 600;font-size: 14px;text-align: center;background: linear-gradient(135deg, #3b82f6, #2563eb);color: white;">
+                                <a href="https://webmakerrpro.com" style="padding: 10px 20px;display:inline-block;text-decoration: none;border-radius: 8px;font-weight: 600;font-size: 14px;text-align: center;background: linear-gradient(135deg, #3b82f6, #2563eb);color: white;">
                                     Leave a Review
                                 </a>
                             </td>
