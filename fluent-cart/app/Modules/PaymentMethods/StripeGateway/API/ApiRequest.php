@@ -59,7 +59,7 @@ class ApiRequest
     public static function get_user_agent()
     {
         $app_info = array(
-            'name'       => 'FluentCart',
+            'name'       => 'WebmakerrPro',
             'version'    => FLUENTCART_VERSION,
             'url'        => site_url(),
             'partner_id' => ''

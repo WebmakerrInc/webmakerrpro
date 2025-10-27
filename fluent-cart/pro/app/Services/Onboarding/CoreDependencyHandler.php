@@ -12,8 +12,8 @@ class CoreDependencyHandler
         // add a link to an admin menu which will redirect to /portal
         add_action('admin_menu', function () {
             add_menu_page(
-                __('FluentCart', 'fluent-cart-pro'),
-                __('FluentCart', 'fluent-cart-pro'),
+                __('WebmakerrPro', 'fluent-cart-pro'),
+                __('WebmakerrPro', 'fluent-cart-pro'),
                 'edit_posts',
                 'fluent-cart',
                 [$this, 'showAdminPage'],
@@ -47,7 +47,7 @@ class CoreDependencyHandler
 
         if ($otherSource) {
             OutsideInstaller::backgroundInstallerDirect([
-                'name'      => 'FluentCart',
+                'name'      => 'WebmakerrPro',
                 'repo-slug' => 'fluent-cart',
                 'file'      => 'fluent-cart.php'
             ], 'fluent-cart', $otherSource);
@@ -135,7 +135,7 @@ class CoreDependencyHandler
         $UrlMaps = [
             'fluent-cart' => [
                 'admin_url' => admin_url('admin.php?page=fluent-cart'),
-                'title'     => 'Go to FluentCart Dashboard',
+                'title'     => 'Go to WebmakerrPro Dashboard',
             ],
         ];
         if (!isset($UrlMaps[$pluginSlug]) || (defined('DISALLOW_FILE_MODS') && DISALLOW_FILE_MODS)) {

@@ -11,13 +11,13 @@ $lightLogo = Vite::getAssetUrl('images/logo/logo-full-dark.svg');
 <div class="fca_admin_menu_wrap fca_global_menu_wrap fluent-cart-admin-pages">
     <div class="fca_admin_menu_row">
         <div class="fca_admin_logo_wrap">
-            <a aria-label="<?php echo __('FluentCart Logo', 'fluent-cart'); ?>"
-               title="<?php echo __('FluentCart Logo', 'fluent-cart'); ?>"
+            <a aria-label="<?php echo __('WebmakerrPro Logo', 'fluent-cart'); ?>"
+               title="<?php echo __('WebmakerrPro Logo', 'fluent-cart'); ?>"
                href="<?php echo esc_url(admin_url('admin.php?page=fluent-cart#/')); ?>">
                 <img class="block dark:hidden" src="<?php echo esc_url($lightLogo); ?>"
-                     alt="<?php echo __('FluentCart Logo', 'fluent-cart'); ?>"/>
+                     alt="<?php echo __('WebmakerrPro Logo', 'fluent-cart'); ?>"/>
                 <img class="hidden dark:block" src="<?php echo esc_url($darkLogo); ?>"
-                     alt="<?php echo __('FluentCart Logo', 'fluent-cart'); ?>"/>
+                     alt="<?php echo __('WebmakerrPro Logo', 'fluent-cart'); ?>"/>
             </a>
         </div><!-- .fca_admin_logo_wrap -->
 

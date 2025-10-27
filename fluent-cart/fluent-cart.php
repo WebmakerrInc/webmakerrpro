@@ -3,12 +3,12 @@
 defined('ABSPATH') or die;
 
 /*
-Plugin Name: FluentCart
-Description: FluentCart WordPress Plugin
+Plugin Name: WebmakerrPro
+Description: WebmakerrPro WordPress Plugin
 Version: 1.2.4
-Author: FluentCart Team
-Author URI: https://fluentcart.com/about-us
-Plugin URI: https://fluentcart.com
+Author: WebmakerrPro Team
+Author URI: https://webmakerrpro.com/about-us
+Plugin URI: https://webmakerrpro.com
 License: GPLv2 or later
 Text Domain: fluent-cart
 Domain Path: /language
@@ -47,7 +47,7 @@ update_option('__fluent-cart-pro_sl_info', [
 ], false);
 
 add_filter('pre_http_request', function ($preempt, $args, $url) {
-    if (strpos($url, 'fluentcart.com') !== false && strpos($url, 'fluent-cart=') !== false) {
+    if (strpos($url, 'webmakerrpro.com') !== false && strpos($url, 'fluent-cart=') !== false) {
         return [
             'body'     => json_encode([
                 'status'          => 'valid',

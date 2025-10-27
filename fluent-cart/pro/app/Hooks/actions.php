@@ -14,11 +14,11 @@
  */
 
 
-use FluentCart\App\Models\OrderItem;
-use FluentCart\App\Models\ProductDetail;
-use FluentCart\App\Models\ProductVariation;
-use FluentCart\Framework\Support\Arr;
-use FluentCart\Framework\Support\Collection;
+use FluentCartPro\App\Models\OrderItem;
+use FluentCartPro\App\Models\ProductDetail;
+use FluentCartPro\App\Models\ProductVariation;
+use FluentCartPro\Framework\Support\Arr;
+use FluentCartPro\Framework\Support\Collection;
 
 $app->addAction('admin_menu', 'AdminMenuHandler@add');
 

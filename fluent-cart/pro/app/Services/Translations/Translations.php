@@ -9,7 +9,7 @@ class Translations
         $translations = [
             'You can replace this module from %s/resources/admin/Components/Dashboard.vue%s' => __('You can replace this module from %s/resources/admin/Components/Dashboard.vue%s', 'fluent-cart-pro'),
             'A New Era of Commerce With WordPress' => __('A New Era of Commerce With WordPress', 'fluent-cart-pro'),
-            'FluentCart requires the Core Plugin to be installed first. Let\'s get you set up in just one click.' => __('FluentCart requires the Core Plugin to be installed first. Let\'s get you set up in just one click.', 'fluent-cart-pro'),
+            'WebmakerrPro requires the Core Plugin to be installed first. Let\'s get you set up in just one click.' => __('WebmakerrPro requires the Core Plugin to be installed first. Let\'s get you set up in just one click.', 'fluent-cart-pro'),
             'Quick & Easy Setup' => __('Quick & Easy Setup', 'fluent-cart-pro'),
             'Go from Setup to first sale in minutes. Configuration is straightforward with the Onboarding Wizard.' => __('Go from Setup to first sale in minutes. Configuration is straightforward with the Onboarding Wizard.', 'fluent-cart-pro'),
             'Clean, Modern Interface' => __('Clean, Modern Interface', 'fluent-cart-pro'),

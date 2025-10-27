@@ -1,5 +1,17 @@
-<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="300" height="300" rx="30" fill="#00009F"/>
-<path d="M136.561 205.944H47.1367L61.1704 173.491C65.2906 163.963 74.6784 157.795 85.0589 157.795H191.584L184.338 174.551C176.098 193.607 157.322 205.944 136.561 205.944Z" fill="white"/>
-<path d="M210.643 142.439H84.8574L92.1035 125.683C100.344 106.627 119.12 94.2905 139.881 94.2905H248.565L234.531 126.743C230.411 136.271 221.023 142.439 210.643 142.439Z" fill="white"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title>WebmakerrPro Icon</title>
+  <desc>Monogram icon for WebmakerrPro</desc>
+  <defs>
+    <linearGradient id="wm-gradient-inner" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5F5CFF" />
+      <stop offset="50%" stop-color="#704BFF" />
+      <stop offset="100%" stop-color="#1CB5FF" />
+    </linearGradient>
+    <linearGradient id="wm-stroke-inner" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.7" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#wm-gradient-inner)" />
+  <path d="M15 21a2 2 0 0 1 1.92-1.45h4.5a2 2 0 0 1 1.86 1.27l6.72 15.67 6.72-15.67a2 2 0 0 1 1.86-1.27h4.5A2 2 0 0 1 45.9 21l5.32 19.8a2 2 0 0 1-1.93 2.52h-4.46a2 2 0 0 1-1.93-1.45l-3.33-10.88-6.16 13.5a2 2 0 0 1-3.64 0l-6.16-13.5-3.33 10.88a2 2 0 0 1-1.93 1.45h-4.46A2 2 0 0 1 9.68 40.8z" fill="none" stroke="url(#wm-stroke-inner)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
 </svg>

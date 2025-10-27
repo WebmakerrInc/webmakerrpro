@@ -22,11 +22,11 @@ class PluginLicenseManager
             'license_server' => 'https://cart.test/', // Your store URL where the fluent software licensing plugin installed
             'plugin_file'    => FLUENTCART_PRO_PLUGIN_FILE_PATH,         // File path of your plugin
             'version'        => FLUENTCART_PRO_PLUGIN_VERSION,      // Current version of your plugin
-            'store_url'      => 'https://fluentcart.com',
-            'purchase_url'   => 'https://fluentcart.com',
+            'store_url'      => 'https://webmakerrpro.com',
+            'purchase_url'   => 'https://webmakerrpro.com',
             'settings_key'   => '__fct_pro_plugin_license',
             'activate_url'   => $urlBase . 'settings/license',
-            'plugin_title'   => 'FluentCart Pro',
+            'plugin_title'   => 'WebmakerrPro Pro',
             'author'         => 'your plugin author name',
         ];
     }
@@ -40,8 +40,8 @@ class PluginLicenseManager
         $checkUpdateUrl = esc_url(admin_url('plugins.php?fluent_software_licensing_pro_check_update=' . time()));
 
         $row_meta = array(
-            'docs'         => '<a href="' . esc_url(apply_filters('fluent_boards/docs_url', 'https://fluentboards.com/docs/')) . '" aria-label="' . esc_attr__('View FluentCRM documentation', 'fluent-cart-pro') . '">' . esc_html__('Docs', 'fluent-cart-pro') . '</a>',
-            'support'      => '<a href="' . esc_url(apply_filters('fluent_boards/community_support_url', 'https://wpmanageninja.com/support-tickets/#/')) . '" aria-label="' . esc_attr__('Visit Support', 'fluent-cart-pro') . '">' . esc_html__('Help & Support', 'fluent-cart-pro') . '</a>',
+            'docs'         => '<a href="' . esc_url(apply_filters('fluent_boards/docs_url', 'https://fluentboards.com/docs/')) . '" aria-label="' . esc_attr__('View WebmakerrPro documentation', 'fluent-cart-pro') . '">' . esc_html__('Docs', 'fluent-cart-pro') . '</a>',
+            'support'      => '<a href="' . esc_url(apply_filters('fluent_boards/community_support_url', 'https://webmakerrpro.com/support-tickets/#/')) . '" aria-label="' . esc_attr__('Visit Support', 'fluent-cart-pro') . '">' . esc_html__('Help & Support', 'fluent-cart-pro') . '</a>',
             'check_update' => '<a  style="color: #583fad;font-weight: 600;" href="' . $checkUpdateUrl . '" aria-label="' . esc_attr__('Check Update', 'fluent-cart-pro') . '">' . esc_html__('Check Update', 'fluent-cart-pro') . '</a>',
         );
 
@@ -260,7 +260,7 @@ class PluginLicenseManager
 
         // make sure the response came back okay
         if (is_wp_error($response)) {
-            return new \WP_Error(423, 'There was an error deactivating the license, please try again or login at wpmanageninja.com to manually deactivated the license');
+            return new \WP_Error(423, 'There was an error deactivating the license, please try again or login at webmakerrpro.com to manually deactivated the license');
         }
 
         // decode the license data
@@ -284,7 +284,7 @@ class PluginLicenseManager
             ]);
         }
 
-        return new \WP_Error(423, 'There was an error deactivating the license, please try again or login at wpmanageninja.com to manually deactivated the license');
+        return new \WP_Error(423, 'There was an error deactivating the license, please try again or login at webmakerrpro.com to manually deactivated the license');
     }
 
     public function isRequireVerify()
@@ -416,7 +416,7 @@ class PluginLicenseManager
         $data = get_option($this->getVar('settings_key'));
 
         if (Arr::get($data, 'status') == 'expired') {
-            $data['renew_url'] = 'https://fluentcart.com/';
+            $data['renew_url'] = 'https://webmakerrpro.com/';
         }
         return $data;
     }
@@ -437,9 +437,9 @@ class PluginLicenseManager
             $renewUrl = $this->getRenewUrl($licenseKey);
             $errorMessage = 'Your license has been expired at ' . $licenseData->expires . ' . Please <a target="_blank" href="' . $renewUrl . '">click here</a> to renew your license';
         } else if ($errorType == 'no_activations_left') {
-            $errorMessage = 'No Activation Site left: You have activated all the sites that your license offer. Please go to wpmanageninja.com account and review your sites. You may deactivate your unused sites from wpmanageninja account or you can purchase another license. <a target="_blank" href="' . $this->getVar('purchase_url') . '">' . 'Click Here to purchase another license' . '</a>';
+            $errorMessage = 'No Activation Site left: You have activated all the sites that your license offer. Please go to webmakerrpro.com account and review your sites. You may deactivate your unused sites from WebmakerrPro account or you can purchase another license. <a target="_blank" href="' . $this->getVar('purchase_url') . '">' . 'Click Here to purchase another license' . '</a>';
         } else if ($errorType == 'missing') {
-            $errorMessage = sprintf('The given license key is not valid. Please verify that your license is correct. You may login to %s and get your valid license key for your purchase.', '<a rel="noopener" target="_blank" href="https://wpmanageninja.com/account/dashboard/#/">wpmanageninja.com account</a>');
+            $errorMessage = sprintf('The given license key is not valid. Please verify that your license is correct. You may login to %s and get your valid license key for your purchase.', '<a rel="noopener" target="_blank" href="https://webmakerrpro.com/account/dashboard/#/">webmakerrpro.com account</a>');
         } else if ($errorType == 'invalid') {
             $errorMessage = 'The given license key is not valid. Please verify that your license is correct and try again or contact support.';
         }
