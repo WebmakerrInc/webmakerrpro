@@ -1,9 +1,9 @@
 <?php
 
-namespace FluentCartPro\App\Services\PluginManager;
+namespace FluentCartPro\App\Services\ProPluginManager;
 
 // Exit if accessed directly
-if (!defined('ABSPATH')) {
+if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
@@ -24,15 +24,15 @@ class Updater
     /**
      * Class constructor.
      *
+     * @uses plugin_basename()
+     * @uses hook()
+     *
      * @param string $_api_url The URL pointing to the custom API endpoint.
      * @param string $_plugin_file Path to the plugin file.
      * @param string $_license_status "valid" if valid
      * @param array $_api_data Optional data to send with API calls.
      * @param array $_plugin_update_data Optional data to generate link for activating or purchasing.
      *                                      Needs admin_page_url, purchase_url, plugin_name, license_status to work
-     * @uses hook()
-     *
-     * @uses plugin_basename()
      */
     function __construct($_api_url, $_plugin_file, $_api_data = null, $_plugin_update_data = [])
     {
@@ -54,7 +54,6 @@ class Updater
             $this->purchase_url = $_plugin_update_data['purchase_url'];
             $this->plugin_title = $_plugin_update_data['plugin_title'];
         }
-
         // Set up hooks.
         $this->init();
     }
@@ -62,21 +61,21 @@ class Updater
     /**
      * Set up WordPress filters to hook into WP's update process.
      *
-     * @return void
      * @uses add_filter()
      *
+     * @return void
      */
     public function init()
     {
         $this->maybe_delete_transients();
 
         add_filter('pre_set_site_transient_update_plugins', array($this, 'check_update'), 51);
-        add_action('delete_site_transient_update_plugins', [$this, 'delete_transients']);
+        add_action( 'delete_site_transient_update_plugins', [ $this, 'delete_transients' ] );
 
         add_filter('plugins_api', array($this, 'plugins_api_filter'), 10, 3);
-        remove_action('after_plugin_row_' . $this->name, 'wp_plugin_update_row');
+        remove_action( 'after_plugin_row_' . $this->name, 'wp_plugin_update_row' );
 
-        add_action('after_plugin_row_' . $this->name, [$this, 'show_update_notification'], 10, 2);
+        add_action( 'after_plugin_row_' . $this->name, [ $this, 'show_update_notification' ], 10, 2 );
 
     }
 
@@ -88,6 +87,7 @@ class Updater
     function check_update($_transient_data)
     {
         global $pagenow;
+
         if (!is_object($_transient_data)) {
             $_transient_data = new \stdClass();
         }
@@ -113,7 +113,6 @@ class Updater
 
         if (false === $version_info) {
             $version_info = $this->api_request('plugin_latest_version', array('slug' => $this->slug));
-
             if (is_wp_error($version_info)) {
                 $version_info = new \stdClass();
                 $version_info->error = true;
@@ -132,6 +131,7 @@ class Updater
             $_transient_data->last_checked = time();
             $_transient_data->checked[$this->name] = $this->version;
         }
+
         return $_transient_data;
     }
 
@@ -143,31 +143,31 @@ class Updater
      */
     public function show_update_notification($file, $plugin)
     {
-        if (is_network_admin()) {
+        if ( is_network_admin() ) {
             return;
         }
 
-        if (!current_user_can('update_plugins')) {
+        if ( ! current_user_can( 'update_plugins' ) ) {
             return;
         }
 
 
-        if ($this->name !== $file) {
+        if ( $this->name !== $file ) {
             return;
         }
 
 
         // Remove our filter on the site transient
-        remove_filter('pre_set_site_transient_update_plugins', [$this, 'check_update']);
+        remove_filter( 'pre_set_site_transient_update_plugins', [ $this, 'check_update' ] );
 
-        $update_cache = get_site_transient('update_plugins');
+        $update_cache = get_site_transient( 'update_plugins' );
 
-        $update_cache = $this->check_transient_data($update_cache);
+        $update_cache = $this->check_transient_data( $update_cache );
 
-        set_site_transient('update_plugins', $update_cache);
+        set_site_transient( 'update_plugins', $update_cache );
 
         // Restore our filter
-        add_filter('pre_set_site_transient_update_plugins', [$this, 'check_update']);
+        add_filter( 'pre_set_site_transient_update_plugins', [ $this, 'check_update' ] );
 
     }
 
@@ -175,34 +175,35 @@ class Updater
     /**
      * Updates information on the "View version x.x details" page with custom data.
      *
+     * @uses api_request()
+     *
      * @param mixed $_data
      * @param string $_action
      * @param object $_args
      *
      * @return object $_data
-     * @uses api_request()
-     *
      */
     function plugins_api_filter($_data, $_action = '', $_args = null)
     {
-        if ('plugin_information' !== $_action) {
+        if ( 'plugin_information' !== $_action ) {
             return $_data;
         }
 
-        if (!isset($_args->slug)) {
+        if(!isset($_args->slug)) {
             return $_data;
         }
 
-        if (!in_array($_args->slug, [$this->slug, 'fluent-cart-pro'])) {
+        $allowedSlugs = [$this->slug, 'fluent-cart', 'fluent-cart-pro'];
+        if (!in_array($_args->slug, $allowedSlugs, true)) {
             return $_data;
         }
 
-        $cache_key = $this->slug . '_api_request_' . substr(md5(serialize($this->slug)), 0, 15);
-        $api_request_transient = get_site_transient($cache_key);
+        $cache_key = $this->slug.'_api_request_' . substr( md5( serialize( $this->slug ) ), 0, 15 );
+        $api_request_transient = get_site_transient( $cache_key );
 
-        if (empty($api_request_transient)) {
+        if ( empty( $api_request_transient ) ) {
             $to_send = array(
-                'slug' => $this->slug,
+                'slug'   => $this->slug,
                 'is_ssl' => is_ssl(),
                 'fields' => array(
                     'banners' => false, // These will be supported soon hopefully
@@ -212,7 +213,7 @@ class Updater
             $api_request_transient = $this->api_request('plugin_information', $to_send);
 
             // Expires in 1 day
-            set_site_transient($cache_key, $api_request_transient, DAY_IN_SECONDS * 2);
+            set_site_transient( $cache_key, $api_request_transient, DAY_IN_SECONDS * 2 );
         }
 
         if (false !== $api_request_transient) {
@@ -234,7 +235,7 @@ class Updater
     function http_request_args($args, $url)
     {
         // If it is an https request and we are performing a package download, disable ssl verification
-        if (strpos($url, 'https://') !== false && strpos($url, 'fluent_cart_action=package_download')) {
+        if (strpos($url, 'https://') !== false && strpos($url, 'edd_action=package_download')) {
             $args['sslverify'] = false;
         }
 
@@ -244,14 +245,14 @@ class Updater
     /**
      * Calls the API and, if successfull, returns the object delivered by the API.
      *
-     * @param string $_action The requested action.
-     * @param array $_data Parameters for the API action.
-     *
-     * @return false|object
      * @uses get_bloginfo()
      * @uses wp_remote_post()
      * @uses is_wp_error()
      *
+     * @param string $_action The requested action.
+     * @param array $_data Parameters for the API action.
+     *
+     * @return false|object
      */
     private function api_request($_action, $_data)
     {
@@ -274,12 +275,12 @@ class Updater
         }
 
         $api_params = array(
-            'fluent_cart_action' => 'get_version',
-            'license' => !empty($data['license']) ? $data['license'] : '',
-            'item_id' => isset($data['item_id']) ? $data['item_id'] : false,
-            'slug' => $data['slug'],
-            'author' => $data['author'],
-            'url' => $siteUrl
+            'edd_action' => 'get_version',
+            'license'    => !empty($data['license']) ? $data['license'] : '',
+            'item_id'    => isset($data['item_id']) ? $data['item_id'] : false,
+            'slug'       => $data['slug'],
+            'author'     => $data['author'],
+            'url'        => $siteUrl
         );
 
         $request = wp_remote_post($this->api_url,
@@ -301,7 +302,7 @@ class Updater
 
     public function show_changelog()
     {
-        if (empty($_REQUEST['fluent_cart_sl_action']) || 'view_plugin_changelog' != $_REQUEST['fluent_cart_sl_action']) {
+        if (empty($_REQUEST['edd_sl_action']) || 'view_plugin_changelog' != $_REQUEST['edd_sl_action']) {
             return;
         }
 
@@ -335,13 +336,17 @@ class Updater
             $this->delete_transients();
         }
 
-        if (isset($_GET['fluent-cart-pro-check-update'])) {
-            if (current_user_can('update_plugins')) {
+        $checkParams = ['fluent-cart-check-update', 'fluent-cart-pro-check-update'];
+        foreach ($checkParams as $param) {
+            if (!isset($_GET[$param])) {
+                continue;
+            }
 
+            if (current_user_can('update_plugins')) {
                 $this->delete_transients();
 
                 // Remove our filter on the site transient
-                remove_filter('pre_set_site_transient_update_plugins', [$this, 'check_update']);
+                remove_filter('pre_set_site_transient_update_plugins', [ $this, 'check_update' ]);
 
                 $update_cache = get_site_transient('update_plugins');
 
@@ -350,11 +355,12 @@ class Updater
                 set_site_transient('update_plugins', $update_cache);
 
                 // Restore our filter
-                add_filter('pre_set_site_transient_update_plugins', [$this, 'check_update']);
+                add_filter('pre_set_site_transient_update_plugins', [ $this, 'check_update' ]);
 
-                wp_redirect(admin_url('plugins.php?s=fluent-cart-pro&plugin_status=all'));
+                wp_redirect(admin_url('plugins.php?s=fluent-cart&plugin_status=all'));
                 exit();
             }
+            break;
         }
     }
 
@@ -388,7 +394,7 @@ class Updater
 
         $data = [
             'timeout' => $expiration,
-            'value' => $value,
+            'value'   => $value,
         ];
 
         update_option($cache_key, $data, 'no');

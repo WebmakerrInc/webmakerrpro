@@ -34,7 +34,8 @@
     "psr-4": {
       "FluentCart\\App\\": "app/",
       "FluentCart\\Dev\\": "dev/",
-      "FluentCart\\Api\\": "api/"
+      "FluentCart\\Api\\": "api/",
+      "FluentCartPro\\App\\": "pro/app/"
     },
     "classmap": [
       "database/"
