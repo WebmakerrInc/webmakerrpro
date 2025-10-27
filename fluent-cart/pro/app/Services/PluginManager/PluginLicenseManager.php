@@ -12,7 +12,7 @@ class PluginLicenseManager
 
     public function __construct()
     {
-        $this->pluginBaseName = 'fluent-cart-pro/fluent-cart-pro.php';
+        $this->pluginBaseName = 'fluent-cart/fluent-cart.php';
         $urlBase = admin_url('admin.php?page=fluent-cart#/settings/licensing'); // your plugin dashboard
 
         $this->settings = [

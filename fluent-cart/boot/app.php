@@ -44,20 +44,7 @@ return function ($file) {
             }
         });
 
-        if (defined('FLUENTCART_PRO_PLUGIN_VERSION')) {
-            add_filter('fluent_cart/admin_notices', function ($notices) {
-                if (FLUENTCART_MIN_PRO_VERSION !== FLUENTCART_PRO_PLUGIN_VERSION && version_compare(FLUENTCART_MIN_PRO_VERSION, FLUENTCART_PRO_PLUGIN_VERSION, '>')) {
-                    if(!PermissionManager::userCan('is_super_admin')) {
-                        return $notices;
-                    }
-
-                    $updateUrl = admin_url('plugins.php?s=fluent-cart&plugin_status=all&fluent-cart-pro-check-update=' . time());
-
-                    $notices[] = '<div>FluentCart Pro Plugin needs to be updated to the latest version. <a href="' . esc_url($updateUrl) . '">Click here to update</a></div>';
-                }
-                return $notices;
-            });
-        }
+        // Pro module is bundled, so there is no separate dependency notice.
     });
 
 
