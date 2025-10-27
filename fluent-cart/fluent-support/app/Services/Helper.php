@@ -29,6 +29,7 @@ use FluentSupport\Framework\Support\Arr;
 class Helper
 {
     protected static $metaTableMissing = false;
+    protected static $personsTableMissing = false;
 
     public static function FluentSupport($module = null)
     {
@@ -49,7 +50,15 @@ class Helper
         if (!$userId) {
             return false;
         }
-        return Agent::where('user_id', $userId)->first();
+        try {
+            return Agent::where('user_id', $userId)->first();
+        } catch (QueryException $exception) {
+            if (static::isPersonsTableMissing($exception)) {
+                return false;
+            }
+
+            throw $exception;
+        }
     }
 
     /**
@@ -456,6 +465,32 @@ class Helper
         }
 
         return static::$metaTableMissing;
+    }
+
+    public static function isPersonsTableMissing(?QueryException $exception = null)
+    {
+        if ($exception && strpos($exception->getMessage(), 'fs_persons') !== false) {
+            static::$personsTableMissing = true;
+        }
+
+        if (static::$personsTableMissing) {
+            return true;
+        }
+
+        global $wpdb;
+
+        if (!isset($wpdb)) {
+            return false;
+        }
+
+        $table = $wpdb->prefix . 'fs_persons';
+        $tableName = $wpdb->get_var($wpdb->prepare('SHOW TABLES LIKE %s', $table));
+
+        if ($tableName !== $table) {
+            static::$personsTableMissing = true;
+        }
+
+        return static::$personsTableMissing;
     }
 
     public static function getTicketViewUrl($ticket)
