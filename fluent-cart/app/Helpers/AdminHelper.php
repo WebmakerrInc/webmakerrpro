@@ -30,18 +30,10 @@ class AdminHelper
                 'label' => __('Upgrade Paths', 'fluent-cart'),
                 'link'  => $baseUrl . 'products/' . $productId . '/upgrade-paths'
             ],
-            'product_integrations' => [
-                'label' => __('Integrations', 'fluent-cart'),
-                'link'  => $baseUrl . 'products/' . $productId . '/integrations'
-            ],
             // 'product_pricing' => [
             //     'label' => __('Pricing', 'fluent-cart'),
             //     'link' => $baseUrl . 'products/' . $productId . '/pricing'
             // ],
-//            'product_integrations' => [
-//                'label' => __('Integrations', 'fluent-cart'),
-//                'link' => $baseUrl . 'products/' . $productId . '/integrations'
-//            ]
         ], [
             'product_id' => $productId,
             'base_url' => $baseUrl
@@ -97,10 +89,6 @@ class AdminHelper
                 'link'  => $baseUrl . 'products',
                 'permission' => ['products/view']
             ],
-//            'integrations' => [
-//                'label' => __('Integrations', 'fluent-cart'),
-//                'link'  => $baseUrl . 'integrations'
-//            ],
             'reports'      => [
                 'label' => __('Reports', 'fluent-cart'),
                 'link'  => $baseUrl . 'reports/overview',

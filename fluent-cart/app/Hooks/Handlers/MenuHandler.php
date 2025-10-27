@@ -30,7 +30,6 @@ use FluentCart\App\Services\Filter\OrderFilter;
 use FluentCart\App\Services\Filter\LicenseFilter;
 use FluentCart\App\Services\Filter\ProductFilter;
 use FluentCart\App\Services\Filter\CustomerFilter;
-use FluentCart\App\Modules\Integrations\AddOnModule;
 use FluentCart\App\Services\Translations\TransStrings;
 use FluentCart\App\Services\Permission\PermissionManager;
 use FluentCart\App\Modules\PaymentMethods\Core\GatewayManager;
@@ -220,16 +219,6 @@ class MenuHandler
                 'admin.php?page=fluent-cart#/products',
                 '',
                 'fluent_cart_products'
-            );
-        }
-
-        if (PermissionManager::userCan('is_super_admin')) {
-            $submenu['fluent-cart']['integrations'] = array(
-                __('Integrations', 'fluent-cart'),
-                $capability,
-                'admin.php?page=fluent-cart#/integrations',
-                '',
-                'fluent_cart_integrations'
             );
         }
 
@@ -435,8 +424,8 @@ class MenuHandler
             'variation_attributes'             => AttributeGroup::with(['terms'])->get(),
             'variation_terms'                  => AttributeTerm::query()->get()->keyBy('id'),
             'product_image_base_uri'           => Helper::getProductImageBaseUri(),
-            'add_on_modules'                   => AddOnModule::showAddOns(),
             'stock_statuses'                   => Status::getStockStatuses(),
+            'add_on_modules'                   => [],
             'fulfillment_types'                => Helper::getFulfilmentTypes(),
             'variation_types'                  => Helper::getVariationTypes(),
             'trans'                            => TransStrings::getStrings(),
