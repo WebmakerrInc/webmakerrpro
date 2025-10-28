@@ -21,7 +21,7 @@ class ProductContent extends Element
     public function set_controls()
     {
         $edit_link = Helpers::get_preview_post_link( get_the_ID() );
-        $label = esc_html__('Edit product content in FluentCart.', 'fluent-cart');
+        $label = esc_html__('Edit product content in WebmakerrPro.', 'fluent-cart');
 
         $this->controls['info'] = [
             'tab'     => 'content',

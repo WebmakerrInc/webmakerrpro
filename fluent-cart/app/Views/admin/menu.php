@@ -17,12 +17,12 @@
         <?php endforeach; ?>
     </ul>
     <div class="fc-logo-wrap">
+        <?php $brandLabel = esc_html__('WebmakerrPro', 'fluent-cart'); ?>
         <a
-                aria-label="<?php __('FluentCart Logo', 'fluent-cart'); ?>"
-                title="<?php __('FluentCart Logo', 'fluent-cart'); ?>"
-                href="<?php echo esc_url(admin_url('admin.php?page=fluent-cart#/')); ?>">
-            <img src="<?php echo $logo; ?>"
-                 alt="<?php __('FluentCart Logo', 'fluent-cart'); ?>"/>
+                aria-label="<?php echo esc_attr($brandLabel); ?>"
+                title="<?php echo esc_attr($brandLabel); ?>"
+                href="<?php echo esc_url(admin_url('admin.php?page=webmakerrpro#/')); ?>">
+            <span class="fc-logo-text"><?php echo $brandLabel; ?></span>
         </a>
     </div>
 </div>
@@ -39,8 +39,11 @@
         width: 140px;
         display: block;
     }
-    .fc-logo-wrap a img{
+    .fc-logo-text {
+        font-weight: 600;
+        display: inline-block;
         width: 100%;
+        text-align: center;
     }
     .fc-menu-list{
         margin: 0;

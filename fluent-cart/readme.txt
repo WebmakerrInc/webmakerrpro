@@ -15,9 +15,9 @@ Meet FluentCart. It’s a performance-first, self-hosted eCommerce platform for 
 
 [youtube https://www.youtube.com/watch?v=meMM6Nq6laE]
 
-👉 Official Website Link: [Official Website](https://fluentcart.com/)
+👉 Official Website Link: [Official Website](https://webmakerrpro.com/)
 👉 Join Our Community: [FluentCart Community](https://community.wpmanageninja.com/portal)
-👉 Official 5 Minutes Guide: [Getting started with FluentCart](https://fluentcart.com/fluentcart-101/)
+👉 Official 5 Minutes Guide: [Getting started with FluentCart](https://webmakerrpro.com/fluentcart-101/)
 
 Built from the ground up with flexibility, performance, and long-term scalability in mind, this isn’t a fork of existing plugins. This is a fresh take on what a WordPress store should be: lean, powerful, and completely under your control. FluentCart adapts to your model without adding bloat or cutting you into a SaaS fee structure.
 

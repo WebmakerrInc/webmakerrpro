@@ -12,7 +12,7 @@ use FluentCart\Framework\Support\Arr;
 
 class ConnectConfig
 {
-    private static $connectBase = 'https://api.fluentcart.com/connect/';
+    private static $connectBase = 'https://api.webmakerrpro.com/connect/';
 
     public static function handleConnect($data)
     {
@@ -23,13 +23,13 @@ class ConnectConfig
         $intent = Arr::get($data, 'intent', '');
 
         if (!$intent) {
-            wp_redirect(admin_url('admin.php?page=fluent-cart#/settings/payments/stripe'));
+            wp_redirect(admin_url('admin.php?page=webmakerrpro#/settings/payments/stripe'));
         }
 
         if ($intent == 'connect') {
             if ($stripeSettings->getApiKey($mode)) {
                 // already connected
-                wp_redirect(admin_url('admin.php?page=fluent-cart#/settings/payments/stripe'));
+                wp_redirect(admin_url('admin.php?page=webmakerrpro#/settings/payments/stripe'));
                 exit;
             }
 
@@ -85,7 +85,7 @@ class ConnectConfig
             }
         }
 
-        wp_redirect(admin_url('admin.php?page=fluent-cart#/settings/payments/stripe'));
+        wp_redirect(admin_url('admin.php?page=webmakerrpro#/settings/payments/stripe'));
     }
 
     public static function getConnectConfig(): array

@@ -26,7 +26,7 @@ class MailChimpBaseIntegration extends BaseIntegrationManager
             12
         );
 
-        $this->description = __('FluentCart Mailchimp module allows you to create Mailchimp newsletter signup forms in WordPress', 'fluent-cart');
+        $this->description = __('WebmakerrPro Mailchimp module allows you to create Mailchimp newsletter signup forms in WordPress', 'fluent-cart');
         $this->logo = Vite::getAssetUrl('images/integrations/mailchimp.svg');
 
         $this->registerAdminHooks();
@@ -41,7 +41,7 @@ class MailChimpBaseIntegration extends BaseIntegrationManager
         return [
             'logo' => esc_url($this->logo ?? ''),
             'menu_title' => __('Mailchimp Settings', 'fluent-cart'),
-            'menu_description' => wp_kses( __( 'Mailchimp is a marketing platform for small businesses. Send beautiful emails, connect your e-commerce store, advertise, and build your brand. Use FluentCart to collect customer information and automatically add it to your Mailchimp campaign list. If you don\'t have a Mailchimp account, you can <a href="http://www.mailchimp.com/" target="_blank">sign up for one here.</a>', 'fluent-cart' ), [
+            'menu_description' => wp_kses( __( 'Mailchimp is a marketing platform for small businesses. Send beautiful emails, connect your e-commerce store, advertise, and build your brand. Use WebmakerrPro to collect customer information and automatically add it to your Mailchimp campaign list. If you don\'t have a Mailchimp account, you can <a href="http://www.mailchimp.com/" target="_blank">sign up for one here.</a>', 'fluent-cart' ), [
                 'a' => [
                     'href' => true,
                     'target' => true
@@ -136,7 +136,7 @@ class MailChimpBaseIntegration extends BaseIntegrationManager
             'logo' => $this->logo,
             'is_active' => $this->isConfigured(),
             'configure_title' => __('Configuration required!', 'fluent-cart'),
-            'global_configure_url' => admin_url('admin.php?page=fluent-cart#/integrations/mailchimp'),
+            'global_configure_url' => admin_url('admin.php?page=webmakerrpro#/integrations/mailchimp'),
             'configure_message' => __('Mailchimp is not configured yet! Please configure your mailchimp api first', 'fluent-cart'),
             'configure_button_text' => __('Set Mailchimp API', 'fluent-cart')
         ];
@@ -192,7 +192,7 @@ class MailChimpBaseIntegration extends BaseIntegrationManager
                     'key' => 'primary_fields',
                     'require_list' => true,
                     'label' => __('Primary Fields', 'fluent-cart'),
-                    'inline_tip' => esc_html__('Associate your Mailchimp merge tags to the appropriate FluentCart fields by selecting the appropriate form field from the list.', 'fluent-cart'),
+                    'inline_tip' => esc_html__('Associate your Mailchimp merge tags to the appropriate WebmakerrPro fields by selecting the appropriate form field from the list.', 'fluent-cart'),
                     'component' => 'map_fields',
                     'field_label_remote' => __('Mailchimp Field', 'fluent-cart'),
                     'field_label_local' => __('Form Field', 'fluent-cart'),
@@ -221,7 +221,7 @@ class MailChimpBaseIntegration extends BaseIntegrationManager
                     'key' => 'tags',
                     'require_list' => true,
                     'label' => __('Tags', 'fluent-cart'),
-                    'tips' => esc_html__('Associate tags to your MailChimp contacts with a comma separated list (e.g. new lead, FluentCart, web source). Commas within a merge tag value will be created as a single tag.', 'fluent-cart'),
+                    'tips' => esc_html__('Associate tags to your MailChimp contacts with a comma separated list (e.g. new lead, WebmakerrPro, web source). Commas within a merge tag value will be created as a single tag.', 'fluent-cart'),
                     'component' => 'selection_routing',
                     'simple_component' => 'value_text',
                     'routing_input_type' => 'text',

@@ -58,7 +58,7 @@ class URL
 
     public static function getDashboardUrl(string $path, $params = null): string
     {
-        $url = admin_url('admin.php?page=fluent-cart#/');
+        $url = admin_url('admin.php?page=webmakerrpro#/');
 
         if (is_array($params)) {
             return $url . self::appendQueryParams($path, $params);

@@ -4,7 +4,6 @@ namespace FluentCart\App\Modules\PaymentMethods\PayPalGateway\API;
 
 use FluentCart\App\Helpers\Helper;
 use FluentCart\App\Services\FrontendView;
-use FluentCart\App\Vite;
 use FluentCart\Framework\Foundation\App;
 use FluentCart\Framework\Support\Arr;
 
@@ -58,11 +57,11 @@ class PayPalPartnerRenderer
                 FrontendView::renderNotFoundPage(
                     __('Error', 'fluent-cart'),
                     __('Error', 'fluent-cart'),
-                    __('Please setup your store country and currency first. ', 'fluent-cart') . '<a href="' . admin_url('admin.php?page=fluent-cart#/settings/store-settings/') . '">' . __('Settings', 'fluent-cart') . '</a>',
+                    __('Please setup your store country and currency first. ', 'fluent-cart') . '<a href="' . admin_url('admin.php?page=webmakerrpro#/settings/store-settings/') . '">' . __('Settings', 'fluent-cart') . '</a>',
 
                     __('Go Back to the Store', 'fluent-cart'),
                     null,
-                    admin_url('admin.php?page=fluent-cart#/settings/payments')
+                    admin_url('admin.php?page=webmakerrpro#/settings/payments')
                 );
                 die();
             }
@@ -73,14 +72,13 @@ class PayPalPartnerRenderer
                 __('Please try again in a moment.', 'fluent-cart'), '',
                 __('Go Back to the Store', 'fluent-cart'),
                 null,
-                admin_url('admin.php?page=fluent-cart#/settings/payments')
+                admin_url('admin.php?page=webmakerrpro#/settings/payments')
             );
             die();
 
         }
 
-        $logo = Vite::getAssetUrl('images/logo/logo-full-dark.svg');
-        $baseUrl = admin_url('admin.php?page=fluent-cart#/');
+        $baseUrl = admin_url('admin.php?page=webmakerrpro#/');
 
 
         App::make('view')->render('paypal.authenticate', [
@@ -88,7 +86,6 @@ class PayPalPartnerRenderer
             'scriptJs'  => $this->scriptJs(),
             'mode'      => $mode,
             'rest'      => Helper::getRestInfo(),
-            'logo'      => $logo,
             'admin_url' => $baseUrl
         ]);
     }

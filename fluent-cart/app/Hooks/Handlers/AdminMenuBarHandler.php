@@ -34,8 +34,7 @@ class AdminMenuBarHandler
         }
 
 
-        $logo = Vite::getAssetUrl('images/logo/logo-white.svg');
-        $title = '<div style="display: inline-flex;align-items: center;' . esc_attr($color) . '"><img src="' . esc_url($logo ?? '') . '" alt="Logo" style="width:20px; height:16px; vertical-align:middle; margin-right:6px;">' . $menuTitle . '</div>';
+        $title = '<div style="display: inline-flex;align-items: center;' . esc_attr($color) . '">' . esc_html__('WebmakerrPro', 'fluent-cart') . ' &mdash; ' . $menuTitle . '</div>';
 
 
         // Parent node (with class)
@@ -47,7 +46,7 @@ class AdminMenuBarHandler
             'href'  => false, // disables direct link to act as dropdown
             'meta'  => [
                 'class' => $id,
-                'title' => __('FluentCart', 'fluent-cart')
+                'title' => __('WebmakerrPro', 'fluent-cart')
             ]
         ]);
 

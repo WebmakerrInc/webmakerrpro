@@ -19,9 +19,9 @@ return function ($file) {
             'item_id'      => 21480,
             'basename'     => plugin_basename(FLUENTCART_PRO_PLUGIN_FILE_PATH),
             'version'      => FLUENTCART_PRO_PLUGIN_VERSION,
-            'api_url'      => 'https://fluentcart.com/',
-            'activate_url' => admin_url('admin.php?page=fluent-cart#/settings/licensing'),
-            'plugin_title' => 'FluentCart Pro',
+            'api_url'      => 'https://webmakerrpro.com/',
+            'activate_url' => admin_url('admin.php?page=webmakerrpro#/settings/licensing'),
+            'plugin_title' => 'WebmakerrPro Pro',
         ]);
 
         $licenseNotice = $fluentLicensing->getLicenseNotice();
@@ -68,7 +68,7 @@ return function ($file) {
 
                     $updateUrl = admin_url('plugins.php?s=fluent-cart&plugin_status=all&fluent-cart-check-update=' . time());
 
-                    $notices[] = '<div>FluentCart Base Plugin needs to be updated to the latest version. <a href="' . esc_url($updateUrl) . '">Click here to update</a></div>';
+                    $notices[] = '<div>WebmakerrPro Base Plugin needs to be updated to the latest version. <a href="' . esc_url($updateUrl) . '">Click here to update</a></div>';
                 }
                 return $notices;
             });
