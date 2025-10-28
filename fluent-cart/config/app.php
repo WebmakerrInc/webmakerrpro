@@ -2,7 +2,7 @@
 
 return [
     'name'           => 'WebmakerrPro',
-    'slug'           => 'fluent-cart',
+    'slug'           => 'webmakerrpro',
     'domain_path'    => '/language',
     'text_domain'    => 'fluent-cart',
     'hook_prefix'    => 'fluent_cart/',
