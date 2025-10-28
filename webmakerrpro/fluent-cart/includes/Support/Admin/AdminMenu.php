@@ -2,6 +2,9 @@
 
 namespace FluentCart\Support\Admin;
 
+use FluentCart\App\App;
+use FluentCart\App\Helpers\AdminHelper;
+use FluentCart\App\Vite;
 use FluentCart\Database\Migrations\SupportInboxesMigrator;
 use FluentCart\Database\Migrations\SupportTicketRepliesMigrator;
 use FluentCart\Database\Migrations\SupportTicketsMigrator;
@@ -69,6 +72,7 @@ class AdminMenu
         $tickets = Ticket::with(['inbox', 'replies'])->orderBy('created_at', 'desc')->limit(50)->get();
         $service = new TicketService();
         $inboxes = $service->getInboxOptions();
+        $adminMenuHtml = $this->prepareAdminMenu();
         include __DIR__ . '/Views/tickets.php';
     }
 
@@ -76,6 +80,7 @@ class AdminMenu
     {
         $service = new TicketService();
         $inboxes = $service->getAllInboxes();
+        $adminMenuHtml = $this->prepareAdminMenu();
         include __DIR__ . '/Views/inboxes.php';
     }
 
@@ -83,6 +88,7 @@ class AdminMenu
     {
         $notifications = NotificationService::getSettings();
         $aiKey = NotificationService::getAiKey();
+        $adminMenuHtml = $this->prepareAdminMenu();
         include __DIR__ . '/Views/settings.php';
     }
 
@@ -121,5 +127,25 @@ class AdminMenu
         }
 
         return Schema::hasTable(SupportTicketsMigrator::$tableName);
+    }
+
+    private function prepareAdminMenu(): string
+    {
+        AdminHelper::pushGlobalAdminAssets();
+
+        $app = App::getInstance();
+        $slug = $app->config->get('app.slug');
+
+        if (!wp_script_is($slug . '_global_admin_hooks', 'enqueued')) {
+            wp_enqueue_script(
+                $slug . '_global_admin_hooks',
+                Vite::getEnqueuePath('admin/admin_hooks.js'),
+                [],
+                FLUENTCART_VERSION,
+                true
+            );
+        }
+
+        return AdminHelper::getAdminMenu(false);
     }
 }

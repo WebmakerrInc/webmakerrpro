@@ -1,11 +1,17 @@
 <?php
 /** @var \FluentCart\Support\Models\Inbox[] $inboxes */
+/** @var string|null $adminMenuHtml */
 ?>
-<div class="fc-layout-width px-4 py-6 space-y-6">
-    <div class="space-y-1">
-        <h1 class="text-lg font-semibold text-system-dark dark:text-gray-50"><?php esc_html_e('Support Inboxes', 'fluent-cart'); ?></h1>
-        <p class="text-sm text-system-mid"><?php esc_html_e('Manage the mailboxes that route customer tickets into FluentCart.', 'fluent-cart'); ?></p>
-    </div>
+<div class="fluent-cart-admin-pages fc-support-admin-page">
+    <?php if (!empty($adminMenuHtml)) : ?>
+        <?php echo $adminMenuHtml; ?>
+    <?php endif; ?>
+
+    <div class="fc-layout-width px-4 py-6 space-y-6">
+        <div class="space-y-1">
+            <h1 class="text-lg font-semibold text-system-dark dark:text-gray-50"><?php esc_html_e('Support Inboxes', 'fluent-cart'); ?></h1>
+            <p class="text-sm text-system-mid"><?php esc_html_e('Manage the mailboxes that route customer tickets into FluentCart.', 'fluent-cart'); ?></p>
+        </div>
 
     <div class="fc-card fc-card-border">
         <div class="fc-card-header">
@@ -106,4 +112,5 @@
             <?php endif; ?>
         </div>
     </div>
+</div>
 </div>
