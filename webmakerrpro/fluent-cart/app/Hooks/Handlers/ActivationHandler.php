@@ -4,6 +4,7 @@ namespace FluentCart\App\Hooks\Handlers;
 
 use FluentCart\Api\StoreSettings;
 use FluentCart\Database\DBMigrator;
+use FluentCart\Support\Setup\SupportSetup;
 
 class ActivationHandler
 {
@@ -16,6 +17,8 @@ class ActivationHandler
         $this->dispatch();
 
         $this->registerWpCron();
+
+        SupportSetup::activate();
     }
 
     public function dispatch()

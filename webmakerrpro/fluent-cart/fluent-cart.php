@@ -16,7 +16,7 @@ Domain Path: /language
  
 if (!defined('FLUENTCART_PLUGIN_PATH')) {
     define('FLUENTCART_VERSION', '1.2.4');
-    define('FLUENTCART_DB_VERSION', '1.0.30');
+    define('FLUENTCART_DB_VERSION', '1.0.31');
     define('FLUENTCART_PLUGIN_PATH', plugin_dir_path(__FILE__));
     define('FLUENTCART_URL', plugin_dir_url(__FILE__));
     define('FLUENTCART_PLUGIN_FILE_PATH', __FILE__);
@@ -92,5 +92,11 @@ $app = $bootstrap(__FILE__);
 if ($proBootstrap) {
     $proBootstrap(__FILE__);
 }
+
+$supportBootstrap = function () {
+    (new \FluentCart\Support\SupportServiceProvider())->boot();
+};
+
+add_action('fluentcart_loaded', $supportBootstrap, 10, 0);
 
 return $app;

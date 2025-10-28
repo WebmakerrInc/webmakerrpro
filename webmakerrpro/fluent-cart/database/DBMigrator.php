@@ -42,6 +42,9 @@ use FluentCart\Database\Migrations\LabelRelationshipsMigrator;
 use FluentCart\Database\Migrations\ActivityMigrator;
 use FluentCart\Database\Migrations\WebhookLogger;
 use FluentCart\Framework\Database\Schema;
+use FluentCart\Database\Migrations\SupportTicketsMigrator;
+use FluentCart\Database\Migrations\SupportTicketRepliesMigrator;
+use FluentCart\Database\Migrations\SupportInboxesMigrator;
 use FluentCartPro\App\Modules\Licensing\Models\License;
 use FluentCartPro\App\Modules\Licensing\Models\LicenseActivation;
 use FluentCartPro\App\Modules\Licensing\Models\LicenseMeta;
@@ -85,7 +88,10 @@ class DBMigrator
         ShippingZonesMigrator::class,
         ShippingMethodsMigrator::class,
         ShippingClassesMigrator::class,
-        ScheduledActionsMigrator::class
+        ScheduledActionsMigrator::class,
+        SupportInboxesMigrator::class,
+        SupportTicketsMigrator::class,
+        SupportTicketRepliesMigrator::class
     ];
 
     public static function migrateUp($network_wide = false)

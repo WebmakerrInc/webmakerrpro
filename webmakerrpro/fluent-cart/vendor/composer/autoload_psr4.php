@@ -6,6 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'FluentCart\\Support\\' => array($baseDir . '/support'),
     'FluentCart\\Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'FluentCart\\Framework\\' => array($vendorDir . '/wpfluent/framework/src/WPFluent'),
     'FluentCart\\FluentCart\\Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
@@ -17,16 +18,8 @@ return array(
     'FluentCart\\FluentCart\\FluentCart\\FluentCart\\FluentCart\\FluentCart\\FluentCart\\FluentCart\\Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'FluentCart\\FluentCart\\FluentCart\\FluentCart\\FluentCart\\FluentCart\\FluentCart\\FluentCart\\FluentCart\\Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'FluentCart\\FluentCart\\FluentCart\\FluentCart\\FluentCart\\FluentCart\\FluentCart\\FluentCart\\FluentCart\\FluentCart\\Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
-    'FluentCart\\FluentCart\\FluentCart\\FluentCart\\FluentCart\\FluentCart\\FluentCart\\FluentCart\\FluentCart\\Faker\\' => array($vendorDir . '/fakerphp/faker/src/Faker'),
-    'FluentCart\\FluentCart\\FluentCart\\FluentCart\\FluentCart\\FluentCart\\FluentCart\\FluentCart\\Faker\\' => array($vendorDir . '/fakerphp/faker/src/Faker'),
-    'FluentCart\\FluentCart\\FluentCart\\FluentCart\\FluentCart\\FluentCart\\FluentCart\\Faker\\' => array($vendorDir . '/fakerphp/faker/src/Faker'),
-    'FluentCart\\FluentCart\\FluentCart\\FluentCart\\FluentCart\\FluentCart\\Faker\\' => array($vendorDir . '/fakerphp/faker/src/Faker'),
-    'FluentCart\\FluentCart\\FluentCart\\FluentCart\\FluentCart\\Faker\\' => array($vendorDir . '/fakerphp/faker/src/Faker'),
-    'FluentCart\\FluentCart\\FluentCart\\FluentCart\\Faker\\' => array($vendorDir . '/fakerphp/faker/src/Faker'),
-    'FluentCart\\FluentCart\\FluentCart\\Faker\\' => array($vendorDir . '/fakerphp/faker/src/Faker'),
-    'FluentCart\\FluentCart\\Faker\\' => array($vendorDir . '/fakerphp/faker/src/Faker'),
-    'FluentCart\\Faker\\' => array($vendorDir . '/fakerphp/faker/src/Faker'),
     'FluentCart\\Dev\\' => array($baseDir . '/dev'),
     'FluentCart\\App\\' => array($baseDir . '/app'),
     'FluentCart\\Api\\' => array($baseDir . '/api'),
+    'FluentCartPro\\App\\' => array($baseDir . '/pro/app'),
 );
