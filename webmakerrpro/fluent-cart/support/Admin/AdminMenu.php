@@ -2,9 +2,13 @@
 
 namespace FluentCart\Support\Admin;
 
+use FluentCart\Database\Migrations\SupportInboxesMigrator;
+use FluentCart\Database\Migrations\SupportTicketRepliesMigrator;
+use FluentCart\Database\Migrations\SupportTicketsMigrator;
+use FluentCart\Framework\Database\Schema;
 use FluentCart\Support\Models\Ticket;
-use FluentCart\Support\Services\TicketService;
 use FluentCart\Support\Services\NotificationService;
+use FluentCart\Support\Services\TicketService;
 
 class AdminMenu
 {
@@ -50,6 +54,18 @@ class AdminMenu
 
     public function renderTicketsPage(): void
     {
+        if (!$this->ensureSupportTables()) {
+            printf(
+                '<div class="notice notice-error"><p>%s</p></div>',
+                esc_html__(
+                    'Support tables are missing and could not be created automatically. Please review your database permissions and re-activate FluentCart.',
+                    'fluent-cart'
+                )
+            );
+
+            return;
+        }
+
         $tickets = Ticket::with(['inbox', 'replies'])->orderBy('created_at', 'desc')->limit(50)->get();
         $service = new TicketService();
         $inboxes = $service->getInboxOptions();
@@ -88,5 +104,22 @@ class AdminMenu
             esc_attr($type),
             esc_html($message)
         );
+    }
+
+    private function ensureSupportTables(): bool
+    {
+        $migrators = [
+            SupportInboxesMigrator::class,
+            SupportTicketsMigrator::class,
+            SupportTicketRepliesMigrator::class,
+        ];
+
+        foreach ($migrators as $migrator) {
+            if (!Schema::hasTable($migrator::$tableName)) {
+                $migrator::migrate();
+            }
+        }
+
+        return Schema::hasTable(SupportTicketsMigrator::$tableName);
     }
 }
