@@ -413,6 +413,8 @@ class AssetLoader
             }
         }
 
+        $nonceSlug = App::slug();
+
         $data = [
             'fluentcart_checkout_vars' => [
                 'rest'                                         => Helper::getRestInfo(),
@@ -431,7 +433,7 @@ class AssetLoader
             'fluentcart_checkout_info' => [
                 'baseUrl'                => site_url(),
                 'rest_url'               => Helper::getRestInfo()['url'],
-                'checkout_nonce'         => wp_create_nonce('fluentcart'),
+                'checkout_nonce'         => wp_create_nonce($nonceSlug),
                 'ajax_url'               => admin_url('admin-ajax.php'),
                 'is_user_logged_in'      => is_user_logged_in(),
                 'is_admin'               => current_user_can('manage_options'),

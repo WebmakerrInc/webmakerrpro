@@ -8,7 +8,10 @@ class AdminTheme
 {
     public static function applyTheme()
     {
-        if ('fluent-cart' === App::request()->get('page')) {
+        $currentPage = App::request()->get('page');
+        $allowedSlugs = [App::slug(), 'fluent-cart'];
+
+        if (in_array($currentPage, $allowedSlugs, true)) {
             add_action('admin_head', function () {
                 ?>
                 <script>

@@ -469,7 +469,10 @@ class TaxModule
     {
         nocache_headers();
 
-        if (!isset($_REQUEST['_wpnonce']) || !wp_verify_nonce($_REQUEST['_wpnonce'], 'fluentcart')) {
+        $nonceSlug = App::slug();
+        $nonce     = isset($_REQUEST['_wpnonce']) ? sanitize_text_field($_REQUEST['_wpnonce']) : '';
+
+        if (!$nonce || !wp_verify_nonce($nonce, $nonceSlug)) {
             wp_send_json(['message' => __('Security check failed', 'fluent-cart')], 403);
         }
 
@@ -583,7 +586,10 @@ class TaxModule
     {
         nocache_headers();
 
-        if (!isset($_REQUEST['_wpnonce']) || !wp_verify_nonce($_REQUEST['_wpnonce'], 'fluentcart')) {
+        $nonceSlug = App::slug();
+        $nonce     = isset($_REQUEST['_wpnonce']) ? sanitize_text_field($_REQUEST['_wpnonce']) : '';
+
+        if (!$nonce || !wp_verify_nonce($nonce, $nonceSlug)) {
             wp_send_json(['message' => __('Security check failed', 'fluent-cart')], 403);
         }
 
