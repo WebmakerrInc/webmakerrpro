@@ -486,7 +486,7 @@ msgstr ""
 msgid ""
 "A free and open-source WordPress SMTP plugin to send emails via multiple "
 "SMTP providers. Ensure email deliverability for your WooCommerce and "
-"WebmakerrPro emails with FluentSMTP."
+"WebmakerrPro emails with WebmakerrSMTP."
 msgstr ""
 
 #: app/Services/Translations/admin-translation.php:1738
@@ -498,7 +498,7 @@ msgstr ""
 msgid ""
 "A powerful helpdesk and customer support plugin for WordPress. Manage "
 "customer support tickets directly from your WordPress dashboard with "
-"WebmakerrPro + FluentSupport integration."
+"WebmakerrPro + WebmakerrSupport integration."
 msgstr ""
 
 #: app/Services/Localization/i18n/states.php:296
@@ -3273,7 +3273,7 @@ msgstr ""
 #: app/Http/Controllers/AddonsController.php:48
 msgid ""
 "Build a community, membership site, or online forum with WebmakerrPro + "
-"FluentCommunity integration. Engage your customers and users right from your "
+"WebmakerrCommunity integration. Engage your customers and users right from your "
 "WordPress dashboard."
 msgstr ""
 
@@ -4830,7 +4830,7 @@ msgstr ""
 
 #: app/Modules/Integrations/AddOnModule.php:44
 msgid ""
-"Connect FluentCRM with WebmakerrPro and subscribe a contact when a form is "
+"Connect WebmakerrCRM with WebmakerrPro and subscribe a contact when a form is "
 "submitted"
 msgstr ""
 
@@ -4861,7 +4861,7 @@ msgid "Constanța"
 msgstr ""
 
 #: app/Modules/Integrations/FluentPlugins/FluentCRMConnect.php:252
-msgid "Contact has been created or updated in FluentCRM."
+msgid "Contact has been created or updated in WebmakerrCRM."
 msgstr ""
 
 #: app/Modules/Integrations/FluentPlugins/FluentCRMConnect.php:252
@@ -5277,7 +5277,7 @@ msgstr ""
 msgid ""
 "Create a fast and responsive community and LMS without slowing down your "
 "server – no bloat, just performance. Sale your course or memberships with "
-"WebmakerrPro + FluentCommunity Integration."
+"WebmakerrPro + WebmakerrCommunity Integration."
 msgstr ""
 
 #: app/Http/Controllers/AddonsController.php:69
@@ -5784,7 +5784,7 @@ msgstr ""
 msgid ""
 "Customize WordPress emails, customized login & signup forms with enhanced "
 "security and social logins. Enhance your site security with WebmakerrPro + "
-"FluentSecurity integration."
+"WebmakerrSecurity integration."
 msgstr ""
 
 #: app/Services/Translations/admin-translation.php:421
@@ -8705,16 +8705,16 @@ msgid "Fluent CRM"
 msgstr ""
 
 #: app/Http/Controllers/AddonsController.php:64
-msgid "Fluent Forms"
+msgid "Webmakerr Forms"
 msgstr ""
 
 #: app/Services/Translations/block-editor-translation.php:95
 msgid ""
-"Fluent Forms Pro Add-On: The Fastest & Most Powerful WordPress Form Plugin"
+"Webmakerr Forms Pro Add-On: The Fastest & Most Powerful WordPress Form Plugin"
 msgstr ""
 
 #: app/Http/Controllers/AddonsController.php:54
-msgid "FluentAuth"
+msgid "WebmakerrAuth"
 msgstr ""
 
 #. Name of the plugin
@@ -8760,39 +8760,39 @@ msgstr ""
 
 #: app/Http/Controllers/AddonsController.php:42
 #: app/Modules/Integrations/FluentPlugins/FluentCommunityConnect.php:166
-msgid "FluentCommunity"
+msgid "WebmakerrCommunity"
 msgstr ""
 
 #: app/Modules/Integrations/FluentPlugins/FluentCommunityConnect.php:266
-msgid "FluentCommunity Integration Success"
+msgid "WebmakerrCommunity Integration Success"
 msgstr ""
 
 #: app/Http/Controllers/AddonsController.php:18
 #: app/Modules/Integrations/FluentPlugins/FluentCRMConnect.php:155
-msgid "FluentCRM"
+msgid "WebmakerrCRM"
 msgstr ""
 
 #: app/Modules/Integrations/FluentPlugins/FluentCRMConnect.php:251
-msgid "FluentCRM Contact Created"
+msgid "WebmakerrCRM Contact Created"
 msgstr ""
 
 #: app/Modules/Integrations/FluentPlugins/FluentCRMConnect.php:20
 msgid ""
-"FluentCRM is a Self Hosted Email Marketing Automation Plugin for WordPress. "
+"WebmakerrCRM is a Self Hosted Email Marketing Automation Plugin for WordPress. "
 "Add/Remove tags, lists, run automations on order activities."
 msgstr ""
 
 #: app/Services/Translations/block-editor-translation.php:96
 msgid ""
-"FluentCRM – The Ultimate CRM, Marketing, & Automation Solution for WordPress"
+"WebmakerrCRM – The Ultimate CRM, Marketing, & Automation Solution for WordPress"
 msgstr ""
 
 #: app/Http/Controllers/AddonsController.php:31
-msgid "FluentSMTP"
+msgid "WebmakerrSMTP"
 msgstr ""
 
 #: app/Http/Controllers/AddonsController.php:75
-msgid "FluentSupport"
+msgid "WebmakerrSupport"
 msgstr ""
 
 #: app/Services/Localization/i18n/states.php:948
@@ -10271,7 +10271,7 @@ msgstr ""
 
 #: app/Modules/Integrations/FluentPlugins/FluentCommunityConnect.php:144
 msgid ""
-"If you enable this, the user will be marked as verified in FluentCommunity"
+"If you enable this, the user will be marked as verified in WebmakerrCommunity"
 msgstr ""
 
 #: app/Services/Localization/i18n/states.php:1231
@@ -20358,12 +20358,12 @@ msgid "Select Filters"
 msgstr ""
 
 #: app/Modules/Integrations/FluentPlugins/FluentCommunityConnect.php:103
-msgid "Select FluentCommunity Spaces"
+msgid "Select WebmakerrCommunity Spaces"
 msgstr ""
 
 #: app/Modules/Integrations/FluentPlugins/FluentCRMConnect.php:82
 #: app/Modules/Integrations/FluentPlugins/FluentCRMConnect.php:102
-msgid "Select FluentCRM Lists"
+msgid "Select WebmakerrCRM Lists"
 msgstr ""
 
 #: app/Services/Translations/admin-translation.php:1292
@@ -20546,15 +20546,15 @@ msgid ""
 msgstr ""
 
 #: app/Modules/Integrations/FluentPlugins/FluentCommunityConnect.php:104
-msgid "Select the FluentCommunity Spaces you would like to add."
+msgid "Select the WebmakerrCommunity Spaces you would like to add."
 msgstr ""
 
 #: app/Modules/Integrations/FluentPlugins/FluentCRMConnect.php:83
-msgid "Select the FluentCRM Lists you would like to add your contact to."
+msgid "Select the WebmakerrCRM Lists you would like to add your contact to."
 msgstr ""
 
 #: app/Modules/Integrations/FluentPlugins/FluentCRMConnect.php:103
-msgid "Select the FluentCRM Lists you would like to remove from your contact."
+msgid "Select the WebmakerrCRM Lists you would like to remove from your contact."
 msgstr ""
 
 #: app/Modules/Integrations/MailChimp/MailChimpBaseIntegration.php:218
@@ -23611,7 +23611,7 @@ msgstr ""
 msgid ""
 "The most powerful and user-friendly email marketing automation plugin for "
 "WordPress. Send newsletters, marketing emails, customer onboard emails, "
-"Automations with WebmakerrPro + FluentCRM integration."
+"Automations with WebmakerrPro + WebmakerrCRM integration."
 msgstr ""
 
 #: app/Services/Translations/admin-translation.php:1493
@@ -25333,7 +25333,7 @@ msgid "User created successfully! You are now logged in."
 msgstr ""
 
 #: app/Modules/Integrations/FluentPlugins/FluentCommunityConnect.php:214
-msgid "User creation failed from FluentCommunity Integration"
+msgid "User creation failed from WebmakerrCommunity Integration"
 msgstr ""
 
 #: app/Listeners/Order/OrderPaid.php:38
@@ -26325,7 +26325,7 @@ msgstr ""
 
 #: app/Modules/Integrations/FluentPlugins/FluentCRMConnect.php:139
 msgid ""
-"When the double opt-in option is enabled. FluentCRM will send a double opt-"
+"When the double opt-in option is enabled. WebmakerrCRM will send a double opt-"
 "in email to the contact for new and not subscribed contacts."
 msgstr ""
 

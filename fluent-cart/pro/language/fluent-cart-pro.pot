@@ -70,7 +70,7 @@ msgstr ""
 msgid "Clean, Modern Interface"
 msgstr ""
 
-#: app/Services/PluginManager/FluentLicensing.php:265
+#: app/Services/PluginManager/WebmakerrLicensing.php:265
 msgid "Click Here to Renew Your License"
 msgstr ""
 
@@ -130,7 +130,7 @@ msgstr ""
 msgid "Error: Missing transaction ID"
 msgstr ""
 
-#: app/Services/PluginManager/FluentLicensing.php:264
+#: app/Services/PluginManager/WebmakerrLicensing.php:264
 msgid "expired at"
 msgstr ""
 
@@ -239,7 +239,7 @@ msgstr ""
 msgid "License"
 msgstr ""
 
-#: app/Services/PluginManager/FluentLicensing.php:264
+#: app/Services/PluginManager/WebmakerrLicensing.php:264
 msgid "license has been"
 msgstr ""
 
@@ -615,7 +615,7 @@ msgid "User not found."
 msgstr ""
 
 #: app/Services/PluginManager/PluginLicenseManager.php:43
-msgid "View FluentCRM documentation"
+msgid "View WebmakerrCRM documentation"
 msgstr ""
 
 #: app/Services/PluginManager/PluginLicenseManager.php:44

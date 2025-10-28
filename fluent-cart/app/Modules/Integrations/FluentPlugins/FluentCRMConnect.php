@@ -15,9 +15,9 @@ class FluentCRMConnect extends BaseIntegrationManager
 
     public function __construct()
     {
-        parent::__construct('FluentCRM', 'fluentcrm', 12);
+        parent::__construct('WebmakerrCRM', 'fluentcrm', 12);
 
-        $this->description = __('FluentCRM is a Self Hosted Email Marketing Automation Plugin for WordPress. Add/Remove tags, lists, run automations on order activities.', 'fluent-cart');
+        $this->description = __('WebmakerrCRM is a Self Hosted Email Marketing Automation Plugin for WordPress. Add/Remove tags, lists, run automations on order activities.', 'fluent-cart');
         $this->logo = Vite::getAssetUrl('images/integrations/fluentcrm.svg');
         $this->disableGlobalSettings = true;
         $this->installable = 'fluent-crm/fluent-crm.php';
@@ -79,8 +79,8 @@ class FluentCRMConnect extends BaseIntegrationManager
             'list_ids'               => [
                 'key'         => 'list_ids',
                 'label'       => __('Add to Lists', 'fluent-cart'),
-                'placeholder' => __('Select FluentCRM Lists', 'fluent-cart'),
-                'inline_tip'  => __('Select the FluentCRM Lists you would like to add your contact to.', 'fluent-cart'),
+                'placeholder' => __('Select WebmakerrCRM Lists', 'fluent-cart'),
+                'inline_tip'  => __('Select the WebmakerrCRM Lists you would like to add your contact to.', 'fluent-cart'),
                 'component'   => 'select',
                 'is_multiple' => true,
                 'required'    => false,
@@ -99,8 +99,8 @@ class FluentCRMConnect extends BaseIntegrationManager
             'remove_list_ids'        => [
                 'key'         => 'remove_list_ids',
                 'label'       => __('Remove From Lists', 'fluent-cart'),
-                'placeholder' => __('Select FluentCRM Lists', 'fluent-cart'),
-                'inline_tip'  => __('Select the FluentCRM Lists you would like to remove from your contact.', 'fluent-cart'),
+                'placeholder' => __('Select WebmakerrCRM Lists', 'fluent-cart'),
+                'inline_tip'  => __('Select the WebmakerrCRM Lists you would like to remove from your contact.', 'fluent-cart'),
                 'component'   => 'select',
                 'is_multiple' => true,
                 'required'    => false,
@@ -120,9 +120,9 @@ class FluentCRMConnect extends BaseIntegrationManager
 //                'key'          => 'other_fields',
 //                'require_list' => false,
 //                'label'        => __('Custom Fields', 'fluent-cart'),
-//                'tips'         => esc_html__('Select which FluentCart fields pair with their respective FluentCRM fields.', 'fluent-cart'),
+//                'tips'         => esc_html__('Select which WebmakerrPro fields pair with their respective WebmakerrCRM fields.', 'fluent-cart'),
 //                'component'    => 'dropdown_many_fields',
-//                'remote_text'  => __('FluentCRM Field', 'fluent-cart'),
+//                'remote_text'  => __('WebmakerrCRM Field', 'fluent-cart'),
 //                'local_text'   => __('Value', 'fluent-cart'),
 //                'options'      => $fieldOptions
 //            ],
@@ -136,7 +136,7 @@ class FluentCRMConnect extends BaseIntegrationManager
                 'key'            => 'double_opt_in',
                 'component'      => 'yes-no-checkbox',
                 'checkbox_label' => __('Enable Double Opt-in', 'fluent-cart'),
-                'inline_tip'     => __('When the double opt-in option is enabled. FluentCRM will send a double opt-in email to the contact for new and not subscribed contacts.', 'fluent-cart')
+                'inline_tip'     => __('When the double opt-in option is enabled. WebmakerrCRM will send a double opt-in email to the contact for new and not subscribed contacts.', 'fluent-cart')
             ],
             'watch_on_access_revoke' => [
                 'key'            => 'watch_on_access_revoke',
@@ -152,7 +152,7 @@ class FluentCRMConnect extends BaseIntegrationManager
         return [
             'fields'              => $fields,
             'button_require_list' => false,
-            'integration_title'   => __('FluentCRM', 'fluent-cart')
+            'integration_title'   => __('WebmakerrCRM', 'fluent-cart')
         ];
     }
 
@@ -248,10 +248,10 @@ class FluentCRMConnect extends BaseIntegrationManager
         }
 
         $order->addLog(
-            __('FluentCRM Contact Created', 'fluent-cart'),
-            __('Contact has been created or updated in FluentCRM.', 'fluent-cart') . ' ' . __('Contact ID: ', 'fluent-cart') . $contact->id,
+            __('WebmakerrCRM Contact Created', 'fluent-cart'),
+            __('Contact has been created or updated in WebmakerrCRM.', 'fluent-cart') . ' ' . __('Contact ID: ', 'fluent-cart') . $contact->id,
             'info',
-            'FluentCRM Integration'
+            'WebmakerrCRM Integration'
         );
 
     }

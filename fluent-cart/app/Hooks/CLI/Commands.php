@@ -694,7 +694,7 @@ class Commands
     }
 
     /**
-     * Migrate WooCommerce customers to FluentCart
+     * Migrate WooCommerce customers to WebmakerrPro
      *
      * ## OPTIONS
      *
@@ -712,7 +712,7 @@ class Commands
      */
     public function migrate_customers($args, $assoc_args)
     {
-        \WP_CLI::line('Starting WooCommerce to FluentCart customer migration...');
+        \WP_CLI::line('Starting WooCommerce to WebmakerrPro customer migration...');
 
         // Debug mode to check what customers are found
         if (isset($assoc_args['debug'])) {
@@ -755,9 +755,9 @@ class Commands
                     $customer->ID, $customer->user_email, $customer->user_registered));
             }
 
-            // Check existing FluentCart customers
+            // Check existing WebmakerrPro customers
             $fluentCustomers = $wpdb->get_var("SELECT COUNT(*) FROM {$wpdb->prefix}fct_customers");
-            \WP_CLI::line(sprintf('Existing FluentCart customers: %d', $fluentCustomers));
+            \WP_CLI::line(sprintf('Existing WebmakerrPro customers: %d', $fluentCustomers));
 
             return;
         }
@@ -780,7 +780,7 @@ class Commands
 
 
     /**
-     * Migrate WooCommerce orders to FluentCart
+     * Migrate WooCommerce orders to WebmakerrPro
      *
      * ## OPTIONS
      *
@@ -808,7 +808,7 @@ class Commands
      */
     public function migrate_orders($args, $assoc_args)
     {
-        \WP_CLI::line('Starting WooCommerce to FluentCart order migration...');
+        \WP_CLI::line('Starting WooCommerce to WebmakerrPro order migration...');
 
         $service = new \FluentCart\App\Modules\WooCommerceMigrator\Services\OrderMigrationService();
 
@@ -931,7 +931,7 @@ class Commands
      */
     public function migrate_all($args, $assoc_args)
     {
-        \WP_CLI::line('Starting complete WooCommerce to FluentCart migration...');
+        \WP_CLI::line('Starting complete WooCommerce to WebmakerrPro migration...');
         \WP_CLI::line('Migration order: Products → Customers → Orders (dependencies respected)');
 
         $totalStats = [

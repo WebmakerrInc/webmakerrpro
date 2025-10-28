@@ -216,7 +216,7 @@ class WooCommerceMigratorCli
                 error_log('All mapped categories exist. Using existing category map.');
                 return $this->categoryMap;
             } else {
-                error_log('Found missing FluentCart categories. Recreating category mapping...');
+                error_log('Found missing WebmakerrPro categories. Recreating category mapping...');
                 $this->categoryMap = []; // Reset mapping to force recreation
             }
         }
@@ -273,7 +273,7 @@ class WooCommerceMigratorCli
         foreach ($this->categoryMap as $wooCatId => $fluentCatId) {
             $fluentCat = get_term($fluentCatId, 'product-categories');
             if (!$fluentCat || is_wp_error($fluentCat)) {
-                error_log('Missing FluentCart category: ID ' . $fluentCatId . ' (mapped from WooCommerce ID ' . $wooCatId . ')');
+                error_log('Missing WebmakerrPro category: ID ' . $fluentCatId . ' (mapped from WooCommerce ID ' . $wooCatId . ')');
                 return false;
             }
         }

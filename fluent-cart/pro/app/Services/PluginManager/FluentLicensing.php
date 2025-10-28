@@ -17,7 +17,7 @@ class FluentLicensing
         }
 
         if (empty($config['basename']) || empty($config['version']) || empty($config['api_url'])) {
-            throw new \Exception('Invalid configuration provided for FluentLicensing. Please provide basename, version, and api_url.');
+            throw new \Exception('Invalid configuration provided for WebmakerrLicensing. Please provide basename, version, and api_url.');
         }
 
         $this->config = $config;

@@ -22,9 +22,9 @@ class FluentCommunityConnect extends BaseIntegrationManager
 
     public function __construct()
     {
-        parent::__construct('FluentCommunity', 'fluent_community', 12);
+        parent::__construct('WebmakerrCommunity', 'fluent_community', 12);
 
-        $this->description = __('Create a fast and responsive community and LMS without slowing down your server – no bloat, just performance. Sale your course or memberships with WebmakerrPro + FluentCommunity Integration.', 'fluent-cart');
+        $this->description = __('Create a fast and responsive community and LMS without slowing down your server – no bloat, just performance. Sale your course or memberships with WebmakerrPro + WebmakerrCommunity Integration.', 'fluent-cart');
         $this->logo = Vite::getAssetUrl('images/integrations/fluent-community.svg');
         $this->disableGlobalSettings = true;
         $this->installable = 'fluent-community/fluent-community.php';
@@ -100,8 +100,8 @@ class FluentCommunityConnect extends BaseIntegrationManager
             'space_ids'              => [
                 'key'         => 'space_ids',
                 'label'       => __('Add to Spaces', 'fluent-cart'),
-                'placeholder' => __('Select FluentCommunity Spaces', 'fluent-cart'),
-                'inline_tip'  => __('Select the FluentCommunity Spaces you would like to add.', 'fluent-cart'),
+                'placeholder' => __('Select WebmakerrCommunity Spaces', 'fluent-cart'),
+                'inline_tip'  => __('Select the WebmakerrCommunity Spaces you would like to add.', 'fluent-cart'),
                 'component'   => 'select',
                 'is_multiple' => true,
                 'required'    => false,
@@ -141,7 +141,7 @@ class FluentCommunityConnect extends BaseIntegrationManager
                 'key'            => 'mark_as_verified',
                 'component'      => 'yes-no-checkbox',
                 'checkbox_label' => __('Mark the community profile as verified', 'fluent-cart'),
-                'inline_tip'     => __('If you enable this, the user will be marked as verified in FluentCommunity', 'fluent-cart')
+                'inline_tip'     => __('If you enable this, the user will be marked as verified in WebmakerrCommunity', 'fluent-cart')
             ],
             'watch_on_access_revoke' => [
                 'key'            => 'watch_on_access_revoke',
@@ -163,7 +163,7 @@ class FluentCommunityConnect extends BaseIntegrationManager
         return [
             'fields'              => $fields,
             'button_require_list' => false,
-            'integration_title'   => __('FluentCommunity', 'fluent-cart')
+            'integration_title'   => __('WebmakerrCommunity', 'fluent-cart')
         ];
     }
 
@@ -211,10 +211,10 @@ class FluentCommunityConnect extends BaseIntegrationManager
             $userId = AuthService::createUserFromCustomer($customer);
             if (is_wp_error($userId)) {
                 $order->addLog(
-                    __('User creation failed from FluentCommunity Integration', 'fluent-cart'),
+                    __('User creation failed from WebmakerrCommunity Integration', 'fluent-cart'),
                     $userId->get_error_message(),
                     'error',
-                    'FluentCommunity Integration'
+                    'WebmakerrCommunity Integration'
                 );
                 return;
             }
@@ -263,10 +263,10 @@ class FluentCommunityConnect extends BaseIntegrationManager
         }
 
         $order->addLog(
-            __('FluentCommunity Integration Success', 'fluent-cart'),
+            __('WebmakerrCommunity Integration Success', 'fluent-cart'),
             sprintf(__('User has been added to spaces: %s and courses: %s', 'fluent-cart'), implode(', ', $spaceIds), implode(', ', $courseIds)),
             'info',
-            'FluentCommunity Integration'
+            'WebmakerrCommunity Integration'
         );
     }
 

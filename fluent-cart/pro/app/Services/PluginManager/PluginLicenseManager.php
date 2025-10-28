@@ -40,7 +40,7 @@ class PluginLicenseManager
         $checkUpdateUrl = esc_url(admin_url('plugins.php?fluent_software_licensing_pro_check_update=' . time()));
 
         $row_meta = array(
-            'docs'         => '<a href="' . esc_url(apply_filters('fluent_boards/docs_url', 'https://fluentboards.com/docs/')) . '" aria-label="' . esc_attr__('View FluentCRM documentation', 'fluent-cart-pro') . '">' . esc_html__('Docs', 'fluent-cart-pro') . '</a>',
+            'docs'         => '<a href="' . esc_url(apply_filters('fluent_boards/docs_url', 'https://fluentboards.com/docs/')) . '" aria-label="' . esc_attr__('View WebmakerrCRM documentation', 'fluent-cart-pro') . '">' . esc_html__('Docs', 'fluent-cart-pro') . '</a>',
             'support'      => '<a href="' . esc_url(apply_filters('fluent_boards/community_support_url', 'https://wpmanageninja.com/support-tickets/#/')) . '" aria-label="' . esc_attr__('Visit Support', 'fluent-cart-pro') . '">' . esc_html__('Help & Support', 'fluent-cart-pro') . '</a>',
             'check_update' => '<a  style="color: #583fad;font-weight: 600;" href="' . $checkUpdateUrl . '" aria-label="' . esc_attr__('Check Update', 'fluent-cart-pro') . '">' . esc_html__('Check Update', 'fluent-cart-pro') . '</a>',
         );

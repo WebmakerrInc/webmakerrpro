@@ -446,7 +446,7 @@ class Paddle extends AbstractPaymentGateway
 //        } else if (!$notificationId && !empty($data[$apiKeyField])) {
 //            $response = API::createPaddleObject('notification-settings',
 //                [
-//                    'description' => __('FluentCart Test Paddle Webhook', 'fluent-cart-pro'),
+//                    'description' => __('WebmakerrPro Test Paddle Webhook', 'fluent-cart-pro'),
 //                    'type' => 'url',
 //                    'destination' => (new Paddle())->getWebhookUrl(),
 //                    'api_version' => 1,

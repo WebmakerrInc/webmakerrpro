@@ -15,53 +15,53 @@ class AddonsController extends Controller
             'fluent-crm'       => [
                 'installable' => 'fluent-crm',
                 'enabled'     => defined('FLUENTCRM'),
-                'title'       => __('FluentCRM', 'fluent-cart'),
+                'title'       => __('WebmakerrCRM', 'fluent-cart'),
                 'logo'        => Vite::getAssetUrl('images/integrations/fluentcrm.svg'),
                 'categories'   => [
                     'crm',
                     'core',
                     'marketing',
                 ],
-                'description' => __('The most powerful and user-friendly email marketing automation plugin for WordPress. Send newsletters, marketing emails, customer onboard emails, Automations with WebmakerrPro + FluentCRM integration.', 'fluent-cart' ),
+                'description' => __('The most powerful and user-friendly email marketing automation plugin for WordPress. Send newsletters, marketing emails, customer onboard emails, Automations with WebmakerrPro + WebmakerrCRM integration.', 'fluent-cart' ),
             ],
             'fluent-smtp'      => [
                 'installable' => 'fluent-smtp',
                 'logo'        => Vite::getAssetUrl('images/integrations/fluent-smtp.svg'),
                 'enabled'     => defined('FLUENTMAIL_PLUGIN_FILE'),
-                'title'       => __('FluentSMTP', 'fluent-cart'),
+                'title'       => __('WebmakerrSMTP', 'fluent-cart'),
                 'categories'   => [
                     'core',
                     'marketing',
                 ],
-                'description' => __('A free and open-source WordPress SMTP plugin to send emails via multiple SMTP providers. Ensure email deliverability for your WooCommerce and WebmakerrPro emails with FluentSMTP.', 'fluent-cart'),
+                'description' => __('A free and open-source WordPress SMTP plugin to send emails via multiple SMTP providers. Ensure email deliverability for your WooCommerce and WebmakerrPro emails with WebmakerrSMTP.', 'fluent-cart'),
             ],
             'fluent-community' => [
                 'installable' => 'fluent-community',
                 'logo'        => Vite::getAssetUrl('images/integrations/fluent-community.svg'),
                 'enabled'     => defined('FLUENT_COMMUNITY_PLUGIN_VERSION'),
-                'title'       => __('FluentCommunity', 'fluent-cart'),
+                'title'       => __('WebmakerrCommunity', 'fluent-cart'),
                 'categories'   => [
                     'core',
                     'community',
                     'lms'
                 ],
-                'description' => __('Build a community, membership site, or online forum with WebmakerrPro + FluentCommunity integration. Engage your customers and users right from your WordPress dashboard.', 'fluent-cart'),
+                'description' => __('Build a community, membership site, or online forum with WebmakerrPro + WebmakerrCommunity integration. Engage your customers and users right from your WordPress dashboard.', 'fluent-cart'),
             ],
             'fluent-security'  => [
                 'installable' => 'fluent-security',
                 'logo'        => Vite::getAssetUrl('images/integrations/fluent-auth.svg'),
                 'enabled'     => defined('FLUENT_AUTH_VERSION'),
-                'title'       => __('FluentAuth', 'fluent-cart'),
+                'title'       => __('WebmakerrAuth', 'fluent-cart'),
                 'categories'   => [
                     'core'
                 ],
-                'description' => __('Customize WordPress emails, customized login & signup forms with enhanced security and social logins. Enhance your site security with WebmakerrPro + FluentSecurity integration.', 'fluent-cart'),
+                'description' => __('Customize WordPress emails, customized login & signup forms with enhanced security and social logins. Enhance your site security with WebmakerrPro + WebmakerrSecurity integration.', 'fluent-cart'),
             ],
             'fluentform'       => [
                 'installable' => 'fluentform',
                 'logo'        => Vite::getAssetUrl('images/integrations/fluent-form.svg'),
                 'enabled'     => defined('FLUENTFORM'),
-                'title'       => __('Fluent Forms', 'fluent-cart'),
+                'title'       => __('Webmakerr Forms', 'fluent-cart'),
                 'categories'   => [
                     'core',
                     'marketing'
@@ -72,12 +72,12 @@ class AddonsController extends Controller
                 'installable' => 'fluent-support',
                 'logo'        => Vite::getAssetUrl('images/integrations/fluent-support.svg'),
                 'enabled'     => defined('FLUENT_SUPPORT_VERSION'),
-                'title'       => __('FluentSupport', 'fluent-cart'),
+                'title'       => __('WebmakerrSupport', 'fluent-cart'),
                 'categories'   => [
                     'core',
                     'marketing'
                 ],
-                'description' => __('A powerful helpdesk and customer support plugin for WordPress. Manage customer support tickets directly from your WordPress dashboard with WebmakerrPro + FluentSupport integration.', 'fluent-cart'),
+                'description' => __('A powerful helpdesk and customer support plugin for WordPress. Manage customer support tickets directly from your WordPress dashboard with WebmakerrPro + WebmakerrSupport integration.', 'fluent-cart'),
             ]
         ];
 
