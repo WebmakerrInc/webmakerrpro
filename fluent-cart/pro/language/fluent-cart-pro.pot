@@ -1,7 +1,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FluentCart Pro\n"
+"Project-Id-Version: WebmakerrPro Pro\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-14 12:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -148,16 +148,16 @@ msgstr ""
 
 #: app/Services/Onboarding/CoreDependencyHandler.php:15
 #: app/Services/Onboarding/CoreDependencyHandler.php:16
-msgid "FluentCart"
+msgid "WebmakerrPro"
 msgstr ""
 
 #. Name of the plugin
-msgid "FluentCart Pro"
+msgid "WebmakerrPro Pro"
 msgstr ""
 
 #: app/Services/Translations/Translations.php:12
 msgid ""
-"FluentCart requires the Core Plugin to be installed first. Let's get you set "
+"WebmakerrPro requires the Core Plugin to be installed first. Let's get you set "
 "up in just one click."
 msgstr ""
 
@@ -196,7 +196,7 @@ msgid "How to configure?"
 msgstr ""
 
 #. URI of the plugin
-msgid "https://www.fluentcart.com"
+msgid "https://www.webmakerrpro.com"
 msgstr ""
 
 #. Author URI of the plugin
@@ -553,7 +553,7 @@ msgid ""
 msgstr ""
 
 #. Description of the plugin
-msgid "The Pro version of FluentCart - A New Era of Commerce with WordPress"
+msgid "The Pro version of WebmakerrPro - A New Era of Commerce with WordPress"
 msgstr ""
 
 #: app/Hooks/Handlers/SubscriptionRenewalHandler.php:173

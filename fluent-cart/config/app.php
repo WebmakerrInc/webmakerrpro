@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'name'           => 'FluentCart',
+    'name'           => 'WebmakerrPro',
     'slug'           => 'fluent-cart',
     'domain_path'    => '/language',
     'text_domain'    => 'fluent-cart',

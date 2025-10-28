@@ -189,7 +189,7 @@ class FluentProducts
         $singularName = __('Product', 'fluent-cart');
 
         if (defined('WC_PLUGIN_FILE')) {
-            $singularName = __('Product (FluentCart)', 'fluent-cart');
+            $singularName = __('Product (WebmakerrPro)', 'fluent-cart');
         }
 
         register_post_type(self::CPT_NAME, [
@@ -214,8 +214,8 @@ class FluentProducts
                         'view_item'     => __('View Product', 'fluent-cart'),
                         'search_items'  => __('Search products', 'fluent-cart'),
                 ],
-            //'_edit_link' => 'admin.php?page=fluent-cart#/products/%d/pricing',
-                'description'           => __('FluentCart products post type', 'fluent-cart'),
+            //'_edit_link' => 'admin.php?page=webmakerrpro#/products/%d/pricing',
+                'description'           => __('WebmakerrPro products post type', 'fluent-cart'),
                 'public'                => true,
                 'hierarchical'          => false,
                 'exclude_from_search'   => false,
@@ -262,7 +262,7 @@ class FluentProducts
             global $pagenow;
             // disable direct create product
             if ($pagenow == 'post-new.php' && isset($_GET['post_type']) && $_GET['post_type'] == self::CPT_NAME) {
-                wp_redirect(admin_url('admin.php?page=fluent-cart#/products/?add-new=true'));
+                wp_redirect(admin_url('admin.php?page=webmakerrpro#/products/?add-new=true'));
                 exit;
             }
         });

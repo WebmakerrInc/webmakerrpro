@@ -151,7 +151,7 @@ class EmailNotificationMailer
         }
         $isEmailFooter = EmailNotifications::getSettings('show_email_footer');
         if (!App::isProActive() || $isEmailFooter === 'yes') {
-            $cartFooter = "<div style='padding: 15px; text-align: center; font-size: 16px; color: #2F3448;'>Powered by <a href='https://fluentcart.com' style='color: #017EF3; text-decoration: none;'>FluentCart</a></div>";
+            $cartFooter = "<div style='padding: 15px; text-align: center; font-size: 16px; color: #2F3448;'>" . esc_html__('Powered by', 'fluent-cart') . " <a href='https://webmakerrpro.com' style='color: #017EF3; text-decoration: none;'>" . esc_html__('WebmakerrPro', 'fluent-cart') . "</a></div>";
             $footer .= $cartFooter;
         }
         return $footer;

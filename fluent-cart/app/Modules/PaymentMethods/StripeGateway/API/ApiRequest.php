@@ -59,7 +59,7 @@ class ApiRequest
     public static function get_user_agent()
     {
         $app_info = array(
-            'name'       => 'FluentCart',
+            'name'       => 'WebmakerrPro',
             'version'    => FLUENTCART_VERSION,
             'url'        => site_url(),
             'partner_id' => ''
@@ -68,7 +68,7 @@ class ApiRequest
         return array(
             'lang'         => 'php',
             'lang_version' => phpversion(),
-            'publisher'    => 'fluentcart',
+            'publisher'    => 'webmakerrpro',
             'uname'        => function_exists('php_uname') ? php_uname() : PHP_OS,
             'application'  => $app_info,
         );

@@ -37,7 +37,7 @@ return function ($file) {
                 add_action('admin_notices', function () {
                     ?>
                     <div class="notice notice-warning">
-                        <p><?php echo 'FluentCart requires MySQL/MariaDB database Engine. Looks like you are using sqlite database. FluentCart will not work on this site.'; ?></p>
+                        <p><?php echo 'WebmakerrPro requires MySQL/MariaDB database Engine. Looks like you are using sqlite database. WebmakerrPro will not work on this site.'; ?></p>
                     </div>
                     <?php
                 });

@@ -14,7 +14,7 @@ class DashboardController extends Controller
     public function getOnboardingData()
     {
         $completed = 0;
-        $baseUrl = apply_filters('fluent_cart/admin_base_url', admin_url('admin.php?page=fluent-cart#/'), []);
+        $baseUrl = apply_filters('fluent_cart/admin_base_url', admin_url('admin.php?page=webmakerrpro#/'), []);
         $steps = [
             'page_setup'   => [
                 'title'     => __('Setup Pages', 'fluent-cart'),
@@ -85,7 +85,7 @@ class DashboardController extends Controller
         $storeName = Arr::get($settings, 'store_name');
         $storeLogo = Arr::get($settings, 'store_logo');
         return !(
-            //$storeName === 'Fluent Cart Shop' ||
+            //$storeName === 'WebmakerrPro Shop' ||
             empty($storeName) ||
             empty($storeLogo)
         );

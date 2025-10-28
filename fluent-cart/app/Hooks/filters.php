@@ -24,12 +24,12 @@ use FluentCart\Framework\Support\Arr;
 add_filter('block_categories_all', function ($categories) {
     $categories[] = array(
         'slug'  => 'fluent-cart',
-        'title' => __('FluentCart', 'fluent-cart'),
+        'title' => __('WebmakerrPro', 'fluent-cart'),
     );
 
     $categories[] = array(
         'slug'  => 'fluent-cart-buttons',
-        'title' => __('FluentCart Buttons', 'fluent-cart'),
+        'title' => __('WebmakerrPro Buttons', 'fluent-cart'),
     );
 
     return $categories;

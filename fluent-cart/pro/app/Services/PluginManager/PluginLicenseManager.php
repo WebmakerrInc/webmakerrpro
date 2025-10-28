@@ -13,7 +13,7 @@ class PluginLicenseManager
     public function __construct()
     {
         $this->pluginBaseName = 'fluent-cart/fluent-cart.php';
-        $urlBase = admin_url('admin.php?page=fluent-cart#/settings/licensing'); // your plugin dashboard
+        $urlBase = admin_url('admin.php?page=webmakerrpro#/settings/licensing'); // your plugin dashboard
 
         $this->settings = [
             'item_id'        => 584,                   // FluentCart product ID
@@ -22,11 +22,11 @@ class PluginLicenseManager
             'license_server' => 'https://cart.test/', // Your store URL where the fluent software licensing plugin installed
             'plugin_file'    => FLUENTCART_PRO_PLUGIN_FILE_PATH,         // File path of your plugin
             'version'        => FLUENTCART_PRO_PLUGIN_VERSION,      // Current version of your plugin
-            'store_url'      => 'https://fluentcart.com',
-            'purchase_url'   => 'https://fluentcart.com',
+            'store_url'      => 'https://webmakerrpro.com',
+            'purchase_url'   => 'https://webmakerrpro.com',
             'settings_key'   => '__fct_pro_plugin_license',
             'activate_url'   => $urlBase . 'settings/license',
-            'plugin_title'   => 'FluentCart Pro',
+            'plugin_title'   => 'WebmakerrPro Pro',
             'author'         => 'your plugin author name',
         ];
     }
@@ -416,7 +416,7 @@ class PluginLicenseManager
         $data = get_option($this->getVar('settings_key'));
 
         if (Arr::get($data, 'status') == 'expired') {
-            $data['renew_url'] = 'https://fluentcart.com/';
+            $data['renew_url'] = 'https://webmakerrpro.com/';
         }
         return $data;
     }
