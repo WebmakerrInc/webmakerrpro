@@ -299,7 +299,7 @@ class MenuHandler
 
         $slug = $config->get('app.slug');
 
-        $baseUrl = apply_filters('fluent_connector_base_url', admin_url('admin.php?page=newproject#/'));
+        $baseUrl = apply_filters('fluent_cart/admin_base_url', admin_url('admin.php?page=webmakerrpro#/'), []);
 
         $app = App::getInstance();
         $assets = $app['url.assets'];
@@ -419,7 +419,7 @@ class MenuHandler
             'fulfillment_types'                => Helper::getFulfilmentTypes(),
             'variation_types'                  => Helper::getVariationTypes(),
             'trans'                            => TransStrings::getStrings(),
-            'dashboard_url'                    => admin_url('admin.php?page=webmakerrpro#'),
+            'dashboard_url'                    => admin_url('admin.php?page=webmakerrpro#/'),
             'checkout_url'                     => $checkoutUrl,
             'dummy_product_info'               => apply_filters('fluent_cart/dummy_product_info', []) ?: [],
             'currency_signs'                   => CurrenciesHelper::getCurrencySigns(),
@@ -485,7 +485,9 @@ class MenuHandler
                 }
             }
         }
-        wp_localize_script('fluent-cart_edit_wp_user_admin_global_js', 'fluentcart_edit_user_global_bar_vars', [
+        $handle = $slug . '_edit_wp_user_admin_global_js';
+
+        wp_localize_script($handle, 'fluentcart_edit_user_global_bar_vars', [
             'customer_base'  => $baseUrl . 'customers/',
             'edit_user_vars' => $editingUserVars
         ]);
