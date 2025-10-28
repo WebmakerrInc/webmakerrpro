@@ -1,11 +1,17 @@
 <?php
 /** @var \FluentCart\Support\Models\Ticket[] $tickets */
 /** @var array $inboxes */
+/** @var string|null $adminMenuHtml */
 ?>
-<div class="fc-layout-width px-4 py-6">
-    <div class="flex flex-col gap-3 sm:flex-row sm:items-center justify-between mb-6">
-        <div class="space-y-1">
-            <h1 class="text-lg font-semibold text-system-dark dark:text-gray-50"><?php esc_html_e('Support Tickets', 'fluent-cart'); ?></h1>
+<div class="fluent-cart-admin-pages fc-support-admin-page">
+    <?php if (!empty($adminMenuHtml)) : ?>
+        <?php echo $adminMenuHtml; ?>
+    <?php endif; ?>
+
+    <div class="fc-layout-width px-4 py-6">
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-center justify-between mb-6">
+            <div class="space-y-1">
+                <h1 class="text-lg font-semibold text-system-dark dark:text-gray-50"><?php esc_html_e('Support Tickets', 'fluent-cart'); ?></h1>
             <p class="text-sm text-system-mid"><?php esc_html_e('Create and manage customer conversations right inside FluentCart.', 'fluent-cart'); ?></p>
         </div>
     </div>
@@ -150,4 +156,5 @@
             <?php endif; ?>
         </div>
     </div>
+</div>
 </div>
