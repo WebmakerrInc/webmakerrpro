@@ -36,7 +36,7 @@ class ComposerStaticInitb2eff533900bbaf3c7b668b284ce4755
     public static $prefixDirsPsr4 = array (
         'FluentCart\\Support\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/support',
+            0 => __DIR__ . '/../..' . '/includes/Support',
         ),
         'FluentCart\\Psr\\Container\\' => 
         array (
