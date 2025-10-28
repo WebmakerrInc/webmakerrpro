@@ -93,10 +93,14 @@ if ($proBootstrap) {
     $proBootstrap(__FILE__);
 }
 
-$supportBootstrap = function () {
-    (new \FluentCart\Support\SupportServiceProvider())->boot();
-};
+$supportBootstrapFile = __DIR__ . '/modules/fluent-support/fluent-support.php';
 
-add_action('fluentcart_loaded', $supportBootstrap, 10, 0);
+if (file_exists($supportBootstrapFile)) {
+    if (!defined('FLUENT_SUPPORT_BOOT_FILE')) {
+        define('FLUENT_SUPPORT_BOOT_FILE', __FILE__);
+    }
+
+    require_once $supportBootstrapFile;
+}
 
 return $app;

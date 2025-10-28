@@ -35,7 +35,6 @@
       "FluentCart\\App\\": "app/",
       "FluentCart\\Dev\\": "dev/",
       "FluentCart\\Api\\": "api/",
-      "FluentCart\\Support\\": "includes/Support/",
       "FluentCartPro\\App\\": "pro/app/"
     },
     "classmap": [

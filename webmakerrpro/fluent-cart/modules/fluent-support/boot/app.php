@@ -21,8 +21,10 @@ return function ($file) {
         do_action('fluent_support_loaded', $application);
         do_action('fluent_support_addons_loaded', $application);
 
-        add_action('init', function () {
-            load_plugin_textdomain('fluent-support', false, 'fluent-support/language/');
+        $languagePath = trailingslashit(dirname(plugin_basename($file))) . 'modules/fluent-support/language/';
+
+        add_action('init', function () use ($languagePath) {
+            load_plugin_textdomain('fluent-support', false, $languagePath);
         });
 
         add_action('fluent_support/admin_app_loaded', function () {
